@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>beacon.xml</path>
+    <offsets>
+      <x-m> 2.751 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.912 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>beacon.xml</path>
+    <offsets>
+      <x-m> -0.989 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.406 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>RedLight.xml</path>
+    <offsets>
+      <x-m> -0.981 </x-m>
+      <y-m> -3.490 </y-m>
+      <z-m> -0.147 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>StrobeLight.xml</path>
+    <offsets>
+      <x-m> -0.961 </x-m>
+      <y-m> -3.490 </y-m>
+      <z-m> -0.147 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>GreenLight.xml</path>
+    <offsets>
+      <x-m> -0.981 </x-m>
+      <y-m>  3.490 </y-m>
+      <z-m> -0.147 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>StrobeLight.xml</path>
+    <offsets>
+      <x-m> -0.961 </x-m>
+      <y-m>  3.490 </y-m>
+      <z-m> -0.147 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Wing light cone -->
+  <model>
+    <path>light-cone.xml</path>
+    <offsets>
+      <x-m>       -0.90 </x-m>
+      <y-m>       -1.12 </y-m>
+      <z-m>       -0.50 </z-m>
+      <pitch-deg> -7.50 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>light-cone.xml</path>
+    <offsets>
+      <x-m>       -0.90 </x-m>
+      <y-m>        1.12 </y-m>
+      <z-m>       -0.50 </z-m>
+      <pitch-deg> -7.50 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

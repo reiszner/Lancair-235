@@ -1,0 +1,93 @@
+English/Français
+
+[English]
+----------
+
+A little history
+================
+
+Lancair 235
+===========
+
+Manufacturer                  : Lancair
+Type                          :
+Year                          :
+Powerplant                    :
+Wingspan                      :
+Length                        :
+Height                        :
+weight                        :
+Cruise speed                  :
+Crew                          :
+
+Some useful keys:
+=================
+
+d : canopy
+
+Thanks
+======
+
+Philippe BROCORENS for his fantastic work on the dashboard
+Gallonf&z for his corrections on the instruments
+
+===============
+BARANGER Emmanuel
+Janury,   15, 2011
+November, 29, 2011
+November, 12, 2019
+November, 05, 2020
+February, 11, 2021
+February, 13, 2021
+July,     08, 2023
+
+http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
+embaranger@gmail.com
+
+
+[Français]
+----------
+
+Un peu d'histoire
+=================
+
+Lancaur 235
+===========
+
+Constructeur                  : Lancair
+Type                          :
+Année                         :
+Moteur                        :
+Envergure                     :
+Longueur                      :
+Hauteur                       :
+Poids à vide                  :
+Vitesse de croisière          :
+Equipage                      :
+
+
+Quelques touches utiles :
+=========================
+
+d : cockpit
+
+Remerciements
+=============
+
+Philippe BROCORENS pour son fantastique travail sur le tableau de bord
+Gallonf&z pour ses corrections sur les instruments
+
+===============
+BARANGER Emmanuel
+15 Janvier  2011
+29 Novembre 2011
+12 Novembre 2019
+05 Novembre 2020
+11 Février  2021
+13 Février  2021
+08 Juillet  2023
+
+http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
+embaranger@gmail.com

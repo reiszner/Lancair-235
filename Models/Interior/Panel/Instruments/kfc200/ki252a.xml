@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+    KING KI-525A Pictorial Indicator
+    Based on Syd Adams KI-525A
+
+    Revision : Emmanuel BARANGER 02/2021 -->
+<PropertyList>
+
+  <path>ki252a.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>CRSknob</object-name>
+    <object-name>HDGknob</object-name>
+    <object-name>face</object-name>
+    <object-name>compass</object-name>
+    <object-name>nav-warning</object-name>
+    <object-name>hdg-warning</object-name>
+    <object-name>kfc-crs</object-name>
+    <object-name>kfc-crs2</object-name>
+    <object-name>To-flag</object-name>
+    <object-name>From-flag</object-name>
+    <object-name>kfc-hdgbug</object-name>
+    <object-name>GSneedle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>fond</object-name>
+    <object-name>CRSknob</object-name>
+    <object-name>HDGknob</object-name>
+    <object-name>face</object-name>
+    <object-name>compass</object-name>
+    <object-name>nav-warning</object-name>
+    <object-name>hdg-warning</object-name>
+    <object-name>kfc-crs</object-name>
+    <object-name>kfc-crs2</object-name>
+    <object-name>To-flag</object-name>
+    <object-name>From-flag</object-name>
+    <object-name>kfc-hdgbug</object-name>
+    <object-name>GSneedle</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
+  <effect>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>compass</object-name>
+    <object-name>nav-warning</object-name>
+    <object-name>hdg-warning</object-name>
+    <object-name>kfc-crs</object-name>
+    <object-name>kfc-crs2</object-name>
+    <object-name>To-flag</object-name>
+    <object-name>From-flag</object-name>
+    <object-name>kfc-hdgbug</object-name>
+    <object-name>GSneedle</object-name>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>compass</object-name>
+    <object-name>kfc-crs</object-name>
+    <object-name>kfc-crs2</object-name>
+    <!-- <object-name>To-flag</object-name>
+    <object-name>From-flag</object-name> -->
+    <property>orientation/heading-magnetic-deg</property>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>kfc-crs</object-name>
+    <object-name>kfc-crs2</object-name>
+    <!-- <object-name>To-flag</object-name>
+    <object-name>From-flag</object-name> -->
+    <property>instrumentation/nav[0]/radials/selected-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>kfc-crs2</object-name>
+    <property>instrumentation/nav[0]/heading-needle-deflection</property>
+    <interpolation>
+      <entry><ind> -10 </ind><dep> -0.018 </dep></entry>
+      <entry><ind>   0 </ind><dep>  0.000 </dep></entry>
+      <entry><ind>  10 </ind><dep>  0.018 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>GSneedle</object-name>
+    <property>instrumentation/nav[0]/gs-needle-deflection-norm</property>
+    <interpolation>
+      <entry><ind> -1.0 </ind><dep> -0.0085 </dep></entry>
+      <entry><ind> -0.5 </ind><dep> -0.0085 </dep></entry>
+      <entry><ind>  0.0 </ind><dep>  0.0000 </dep></entry>
+      <entry><ind>  1.0 </ind><dep>  0.0162 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>To-flag</object-name>
+    <condition><property>instrumentation/nav[0]/radials/selected-deg</property>
+      <equals>
+        <property>instrumentation/nav[0]/to-flag</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>From-flag</object-name>
+    <condition>
+      <equals>
+        <property>instrumentation/nav[0]/from-flag</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>nav-warning</object-name>
+    <condition>
+      <or>
+        <not>
+          <property>instrumentation/nav[0]/in-range</property>
+        </not>
+        <less-than>
+          <property>systems/electrical/outputs/nav</property>
+          <value>0.2</value>
+        </less-than>
+      </or>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>hdg-warning</object-name>
+    <condition>
+      <less-than>
+        <property>systems/electrical/outputs/nav</property>
+        <value>0.2</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>GSneedle</object-name>
+    <condition>
+      <and>
+        <property>instrumentation/nav[0]/has-gs</property>
+        <less-than>
+          <property>instrumentation/nav[0]/gs-distance</property>
+          <value>30000.0</value>
+        </less-than>
+      </and>
+    </condition>
+  </animation>
+
+  <!-- CRSknob -->
+  <animation>
+    <type>rotate</type>
+    <object-name>CRSknob</object-name>
+    <property>instrumentation/nav[0]/radials/selected-deg</property>
+    <center>
+      <x-m>  0.011 </x-m>
+      <y-m> -0.039 </y-m>
+      <z-m> -0.025 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>CRSknob</object-name>
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/nav[0]/radials/selected-deg</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/nav[0]/radials/selected-deg</property>
+        <step>1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <!-- HDGknob -->
+  <animation>
+    <type>rotate</type>
+    <object-name>kfc-hdgbug</object-name>
+    <property>autopilot/internal/fdm-heading-bug-error-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>HDGknob</object-name>
+    <property>autopilot/settings/heading-bug-deg</property>
+    <center>
+      <x-m>  0.011 </x-m>
+      <y-m>  0.039 </y-m>
+      <z-m> -0.025 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>HDGknob</object-name>
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <step>1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

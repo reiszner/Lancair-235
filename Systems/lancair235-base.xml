@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="views.xml">
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Lancair-235/lancair235-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Lancair-235/Sounds/lancair235-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Lancair-235/Models/lancair235.xml</path>
+      <livery>
+        <file type="string"></file>
+      </livery>
+    </model>
+
+    <systems include="rules.xml">
+      <path>Aircraft/Lancair-235/Systems/systems.xml</path>
+    </systems>
+
+    <instrumentation include="initialisation.xml"/>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int    n="0"  type="int">0</int>
+        <int    n="1"  type="int">0</int>
+        <int    n="2"  type="int">0</int>
+        <int    n="3"  type="int">0</int>
+        <int    n="4"  type="int">0</int>
+        <int    n="5"  type="int">0</int>
+        <int    n="6"  type="bool" alias="controls/smoke">0</int>
+        <int    n="7"  type="int">0</int>
+        <int    n="8"  alias="/systems/electrical/outputs/nav-lights">0</int>
+        <int    n="9"  alias="/sim/model/lights/beacon/state">false</int>
+        <float  n="0"  alias="/sim/model/door-positions/crew/position-norm"/>
+        <float  n="1"  alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float  n="2"  alias="/position/gear-agl-m">0</float>
+        <float  n="3"  alias="/position/altitude-ft">0</float>
+        <float  n="4"  alias="/engines/engine[0]/rpm"/>
+        <float  n="5"  alias="/engines/engine[0]/cranking"/>
+        <float  n="6"  alias="/gear/gear[0]/wow/"/>
+        <float  n="7"  alias="/gear/gear[1]/wow/"/>
+        <float  n="8"  alias="/gear/gear[2]/wow/"/>
+        <float  n="9"  alias="/gear/gear[0]/rollspeed-ms"/>
+        <float  n="10" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float  n="11" alias="/gear/gear[2]/rollspeed-ms"/>
+        <!-- For Bombable -->
+        <int    n="10" type="int" alias="controls/armament/trigger">0</int>
+        <string n="9"  type="string" />
+      </generic>
+    </multiplay>
+
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>200</weight-lb>
+      <max-lb>250</max-lb>
+      <min-lb>100</min-lb>
+    </weight>
+
+    <weight n="1">
+      <name>Copilot</name>
+      <weight-lb>200</weight-lb>
+      <max-lb>250</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+
+    <weight n="2">
+      <name>Pax</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>250</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+
+    <weight n="3">
+      <name>Cargo</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>250</max-lb>
+      <min-lb>0</min-lb>
+    </weight>
+
+    <help include="help.xml"/>
+
+    <lancair235 include="lancair235.xml"/>
+
+    <flaps include="flaps.xml"/>
+
+    <menubar include="../Dialogs/lancair235-menu.xml"/>
+
+  </sim>
+
+  <input include="lancair235-keyboard.xml"/>
+
+  <systems include="systems2.xml"/>
+
+  <controls include="controls.xml"/>
+
+  <instrumentation include="instrumentation.xml"/>
+
+  <autopilot include="autopilot.xml"/>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Lancair-235/Nasal/doors.nas</file>
+    </doors>
+    <lancair235>
+      <file>Aircraft/Lancair-235/Nasal/light.nas</file>
+      <file>Aircraft/Lancair-235/Nasal/liveries.nas</file>
+      <file>Aircraft/Lancair-235/Nasal/immat.nas</file>
+      <file>Aircraft/Lancair-235/Nasal/convert.nas</file>
+      <file>Aircraft/Lancair-235/Nasal/Electrical.nas</file>
+    </lancair235>
+    <ki252a>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kfc200/ki252a.nas</file>
+    </ki252a>
+    <chronograph>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/chronograph/chronograph.nas</file>
+    </chronograph>
+    <kns80>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kns80/kns80.nas</file>
+    </kns80>
+    <kcs55>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kcs55/kcs55.nas</file>
+      <script>
+        <![CDATA[
+          KCS55.new();
+        ]]>
+      </script>
+    </kcs55>
+    <kr87>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kr87-adf/kr87.nas</file>
+    </kr87>
+    <ki266>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/ki206/ki266.nas</file>
+      <script>
+        <![CDATA[
+        ki266.new(0);
+        ]]>
+      </script>
+    </ki266>
+    <zkv500>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/zkv500/ZKV500.nas</file>
+    </zkv500>
+  </nasal>
+
+</PropertyList>

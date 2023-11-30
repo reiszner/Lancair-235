@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- KNS 80 config file -->
+
+<PropertyList>
+
+  <params>
+    <power-nominal>instrumentation/kns80/config/power-nominal</power-nominal>
+    <power-supplied>systems/electrical/outputs/kns80</power-supplied>
+
+    <nav-power-btn>instrumentation/nav[0]/power-btn</nav-power-btn>
+    <nav-audio-btn>instrumentation/nav[0]/audio-btn</nav-audio-btn>
+    <nav-ident>instrumentation/nav[0]/ident</nav-ident>
+    <nav-volume>instrumentation/nav[0]/volume</nav-volume>
+    <nav-in-range>instrumentation/nav[0]/in-range</nav-in-range>
+    <nav-loc>instrumentation/nav[0]/nav-loc</nav-loc>
+    <nav-from-flag>instrumentation/nav[0]/from-flag</nav-from-flag>
+    <nav-to-flag>instrumentation/nav[0]/to-flag</nav-to-flag>
+    <nav-heading-deg>instrumentation/nav[0]/heading-deg</nav-heading-deg>
+    <nav-frequency>instrumentation/nav[0]/frequencies/selected-mhz</nav-frequency>
+    <nav-target-radial-deg>instrumentation/nav[0]/radials/target-radial-deg</nav-target-radial-deg>
+    <nav-selected-deg>instrumentation/nav[0]/radials/selected-deg</nav-selected-deg>
+
+    <dme-power-btn>instrumentation/dme[0]/power-btn</dme-power-btn>
+    <dme-in-range>instrumentation/dme[0]/in-range</dme-in-range>
+    <dme-indicated-distance-nm>instrumentation/dme[0]/indicated-distance-nm</dme-indicated-distance-nm>
+    <dme-source>instrumentation/dme[0]/frequencies/source</dme-source>
+    <dme-frequency>instrumentation/dme[0]/frequencies/selected-mhz</dme-frequency>
+  </params>
+
+</PropertyList>

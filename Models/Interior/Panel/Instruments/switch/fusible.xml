@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>fusible.ac</path>
+
+  <animation>
+    <object-name>tour</object-name>
+    <object-name>capot</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>tour</object-name>
+    <object-name>capot</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>tour</object-name>
+    <object-name>capot</object-name>
+    <emission>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+      <red>   0.5 </red>
+      <green> 0.4 </green>
+      <blue>  0.3 </blue>
+    </emission>
+  </animation>
+
+</PropertyList>
