@@ -176,7 +176,7 @@
     </offsets>
   </model>
 
-  <!-- GPS console-->
+  <!-- GPS console
   <model>
     <path>Instruments/zkv500/ZKV500.xml</path>
     <offsets>
@@ -188,6 +188,7 @@
       <heading-deg> 20 </heading-deg>
     </offsets>
   </model>
+-->  
 
   <!-- Magnetos -->
   <model>

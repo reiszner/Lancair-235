@@ -60,10 +60,10 @@
     <path>Seats/all-seats.xml</path>
   </model>
 
-  <!-- Canopy -->
+  <!-- Canopy: Mouse click on canopy edge or use kybd 'd' -->
   <animation>
     <type>pick</type>
-    <object-name>intvitres</object-name>
+    <object-name>intvitres2</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
