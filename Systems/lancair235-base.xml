@@ -23,9 +23,13 @@
 
     <systems include="rules.xml">
       <path>Aircraft/Lancair-235/Systems/systems.xml</path>
+      <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-proprules.xml</path>
     </systems>
 
-    <instrumentation include="initialisation.xml"/>
+    <instrumentation>
+      <path>Aircraft/Lancair-235/Systems/instrumentation.xml</path>
+      <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kns80/kns80-props.xml</path>
+    </instrumentation>
 
     <multiplay>
       <chat_display>1</chat_display>
@@ -102,7 +106,7 @@
 
   <controls include="controls.xml"/>
 
-  <instrumentation include="instrumentation.xml"/>
+  <autopilot include="Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-properties.xml"/>
 
   <autopilot include="autopilot.xml"/>
 
@@ -145,6 +149,9 @@
         ]]>
       </script>
     </ki266>
+    <kap140>
+      <file>Aircraft/Lancair-235/Nasal/kap140.nas</file>
+    </kap140>
     <zkv500>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/zkv500/ZKV500.nas</file>
     </zkv500>
