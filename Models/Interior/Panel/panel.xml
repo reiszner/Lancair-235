@@ -38,7 +38,7 @@
     </emission>
   </animation>
 
-  <!--KAP140 -->
+  <!--KAP140 A/P-->
   <model>
     <path>Instruments/kap140/kap140.xml</path>
     <offsets>
@@ -48,7 +48,7 @@
     </offsets>
   </model>
 
-  <!-- KNS80 -->
+  <!-- KNS80 RNAV/VOR NAV2-->
   <model>
     <path>Instruments/kns80/kns80.xml</path>
     <offsets>
@@ -58,7 +58,7 @@
     </offsets>
   </model>
 
-  <!--KR87 -->
+  <!--KR87 ADF-->
   <model>
     <path>Instruments/kr87-adf/kr87.xml</path>
     <offsets>
@@ -68,7 +68,7 @@
     </offsets>
   </model>
 
-  <!--kx165-->
+  <!--KX165 COM/NAV1-->
   <model>
     <path>Instruments/kx165/kx165-1.xml</path>
     <offsets>
@@ -78,7 +78,7 @@
     </offsets>
   </model>
 
-  <!-- KT76A -->
+  <!-- KT76A TXPDR-->
   <model>
     <path>Instruments/KT76A/KT76A.xml</path>
     <offsets>
@@ -98,7 +98,7 @@
     </offsets>
   </model>
 
-  <!-- ai -->
+  <!-- ai FLTDIR BlueBrown-->
   <model>
     <path>Instruments/kfc200/ki256.xml</path>
     <offsets>
@@ -108,9 +108,9 @@
     </offsets>
   </model>
 
-  <!-- hsi -->
+  <!-- HSI  CDI/GS -->
   <model>
-    <path>Instruments/kfc200/ki252a.xml</path>
+    <path>Instruments/kcs55/ki525a.xml</path>
     <offsets>
       <x-m> -0.02087 </x-m>
       <y-m> -0.22400 </y-m>
@@ -176,7 +176,7 @@
     </offsets>
   </model>
 
-  <!-- GPS console
+  <!-- GPS Console  ( disabled: White Sheet ) 
   <model>
     <path>Instruments/zkv500/ZKV500.xml</path>
     <offsets>
@@ -211,7 +211,7 @@
     </offsets>
   </model>
 
-  <!-- RMI -->
+  <!-- RMI Radio Mag Indi NAV1/NAV2/TAC-->
   <model>
     <path>Instruments/RMI/rmi.xml</path>
     <offsets>

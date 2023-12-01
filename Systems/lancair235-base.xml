@@ -106,9 +106,9 @@
 
   <controls include="controls.xml"/>
 
-  <autopilot include="Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-properties.xml"/>
+  <instrumentation include="initialisation.xml"/>
 
-  <autopilot include="autopilot.xml"/>
+  <autopilot include="Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-properties.xml"/>
 
   <nasal>
     <doors>
