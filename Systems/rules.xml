@@ -2,32 +2,33 @@
 
 <PropertyList>
 
-  <autopilot n="100">
-    <path>Aircraft/Lancair-235/Systems/kap140-autopilot.xml</path>
-  </autopilot>
-
   <property-rule n="100">
     <path>Aircraft/Lancair-235/Systems/glass-rain.xml</path>
   </property-rule>
 
-  <property-rule n="101">
-    <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kr87-adf/ki227-filter.xml</path>
-  </property-rule>
+  <autopilot n="101">
+    <path>Aircraft/Lancair-235/Systems/kap140-autopilot.xml</path>
+  </autopilot>
 
-  <property-rule n="102">
-    <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kfc200/ki252a-filter.xml</path>
-  </property-rule>
+  <autopilot n="102">
+    <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/nav-selector.xml</path>
+  </autopilot>
 
   <property-rule n="103">
     <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-proprules.xml</path>
   </property-rule>
 
   <property-rule n="104">
-    <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kns80/kns80-proprules.xml</path>
+    <name>nav-sele prop</name>
+    <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/nav-selector.xml</path>
   </property-rule>
 
-  <autopilot n="105">
-    <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/nav-selector.xml</path>
-  </autopilot>
+  <property-rule n="105">
+    <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kr87-adf/ki227-filter.xml</path>
+  </property-rule>
+
+  <property-rule n="106">
+    <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kns80/kns80-proprules.xml</path>
+  </property-rule>
 
 </PropertyList>

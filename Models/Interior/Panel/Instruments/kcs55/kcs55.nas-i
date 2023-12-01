@@ -407,11 +407,8 @@ var KCS55 = {
   },
 };
 
-var  nav_sele_node = props.globals.getNode("/instrumentation/nav-source/selector", 1) ;
-
-#  When nav-source/selector changes 0-1-2 Nav[0]-KNS80-GPS : route props from Nav1/KNS80/GPS to KI525 display
-setlistener("/instrumentation/nav-source/selector", func(tNode) {
-  var tIndx = tNode.getValue();
+#  Override static configuration to route props from Nav1/Nav2/KNS80 to KI525 displayt
+selectNavSrce = func ( tIndx = 0) {
   # property pointers hold property names of sources from various nav instruments
   var sele_crse_pntr = props.globals.getNode("/instrumentation/kcs55/ki525/selected-course-property", 1);
   var  cdi_defl_pntr = props.globals.getNode("/instrumentation/kcs55/ki525/cdi-deflection-property", 1);
@@ -427,8 +424,9 @@ setlistener("/instrumentation/nav-source/selector", func(tNode) {
   var from_flag_prop = "/instrumentation/kcs55/ki525/from-flag";
   var  nav_flag_prop = "/instrumentation/kcs55/ki525/nav-flag";
   #  Change value in this prop node to an integer to select nav source for ki525 display
-  var ki525_srce_prop = "/instrumentation/kcs55/ki525/nav-srce-index";
+  var   nav_srce_prop = "/instrumentation/kcs55/ki525/nav-srce-index";
   # nav-srce/selector is 0-indexed: select 0  for Nav 1  
+  var   nav_sele_prop = "/instrumentation/nav-source/selector";
   ##
   var sele_crse_srce_node = '';
   var cdi_defl_srce_node = ''; 
@@ -437,29 +435,32 @@ setlistener("/instrumentation/nav-source/selector", func(tNode) {
   var from_flag_srce_node = '';
   var nav_flag_srce_node = '';
   #
-  setprop( "/instrumentation/kcs55/ki525/nav-srce-index", tIndx);
+  setprop( nav_srce_prop, tIndx);
   if (tIndx == 2 ) {
-    # These GPS prop settings have not been tested     
-    sele_crse_srce_node = "/instrumentation/gps/nav/heading-deg";
-    cdi_defl_srce_node  = "/instrumentation/gps/nav/heading-needle-deflection-norm";
-    gs_defl_srce_node   = "/instrumentation/gps/nav/glideslope-deflection-norm";
-    to_flag_srce_node   = "/instrumentation/gps/nav/to-flag";
-    from_flag_srce_node = "/instrumentation/gps/nav/from-flag";
-    nav_flag_srce_node  = "/instrumentation/gps/nav/nav-flag";
-  } else if (tIndx == 1 ) {
-    sele_crse_srce_node = "/instrumentation/kns80/nav/heading-deg";
-    cdi_defl_srce_node  = "/instrumentation/kns80/nav/heading-needle-deflection-norm";
-    gs_defl_srce_node   = "/instrumentation/kns80/nav/glideslope-deflection-norm";
-    to_flag_srce_node   = "/instrumentation/kns80/nav/to-flag";
+    setprop( nav_sele_prop, 1);
+    sele_crse_srce_node = "instrumentation/nav[1]/radials/selected-deg";
+    cdi_defl_srce_node = "/instrumentation/kns80/nav/heading-needle-deflection-norm";
+    gs_defl_srce_node = "/instrumentation/kns80/nav/glideslope-deflection-norm";
+    to_flag_srce_node = "/instrumentation/kns80/nav/to-flag";
     from_flag_srce_node = "/instrumentation/kns80/nav/from-flag";
-    nav_flag_srce_node  = "/instrumentation/kns80/nav/nav-flag";
+    nav_flag_srce_node = "/instrumentation/kns80/nav/nav-flag";
+  } else if (tIndx == 1 ) {
+    setprop( nav_sele_prop, 0);
+    sele_crse_srce_node = "instrumentation/nav[1]/radials/selected-deg";
+    cdi_defl_srce_node = "instrumentation/nav[1]/heading-needle-deflection-norm";
+    gs_defl_srce_node = "instrumentation/nav[1]/gs-needle-deflection-norm";
+    to_flag_srce_node = "/instrumentation/nav[1]/to-flag";
+    from_flag_srce_node = "/instrumentation/nav[1]/from-flag";
+    nav_flag_srce_node = "/instrumentation/nav[1]/nav-flag";
   } else {
-    sele_crse_srce_node = "/instrumentation/nav[0]/radials/selected-deg";
-    cdi_defl_srce_node  = "/instrumentation/nav[0]/heading-needle-deflection-norm";
-    gs_defl_srce_node   = "/instrumentation/nav[0]/gs-needle-deflection-norm";
-    to_flag_srce_node   = "/instrumentation/nav[0]/to-flag";
+    setprop( nav_srce_prop, 0);
+    setprop( nav_sele_prop, 0);
+    sele_crse_srce_node = "instrumentation/nav[0]/radials/selected-deg";
+    cdi_defl_srce_node = "instrumentation/nav[0]/heading-needle-deflection-norm";
+    gs_defl_srce_node = "instrumentation/nav[0]/gs-needle-deflection-norm";
+    to_flag_srce_node = "/instrumentation/nav[0]/to-flag";
     from_flag_srce_node = "/instrumentation/nav[0]/from-flag";
-    nav_flag_srce_node  = "/instrumentation/nav[0]/data-is-valid";
+    nav_flag_srce_node = "/instrumentation/nav[0]/data-is-valid";
   }
   # Write props for new alii according to selected nav step
   sele_crse_pntr.setValue(sele_crse_srce_node);
@@ -483,4 +484,4 @@ setlistener("/instrumentation/nav-source/selector", func(tNode) {
   props.globals.getNode(to_flag_prop).alias(to_flag_pntr.getValue());
   props.globals.getNode(from_flag_prop).alias(from_flag_pntr.getValue());
   props.globals.getNode(nav_flag_prop).alias(nav_flag_pntr.getValue());
-}, 0, 0);
+}

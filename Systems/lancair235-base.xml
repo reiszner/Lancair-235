@@ -121,9 +121,9 @@
       <file>Aircraft/Lancair-235/Nasal/convert.nas</file>
       <file>Aircraft/Lancair-235/Nasal/Electrical.nas</file>
     </lancair235>
-    <ki252a>
-      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kfc200/ki252a.nas</file>
-    </ki252a>
+    <!--ki252a-->
+      <!--file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kfc200/ki252a.nas</file-->
+    <!--/ki252a-->
     <chronograph>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/chronograph/chronograph.nas</file>
     </chronograph>
@@ -152,9 +152,9 @@
     <kap140>
       <file>Aircraft/Lancair-235/Nasal/kap140.nas</file>
     </kap140>
-    <zkv500>
-      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/zkv500/ZKV500.nas</file>
-    </zkv500>
+    <!--zkv500-->
+      <!--file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/zkv500/ZKV500.nas</file-->
+    <!--/zkv500-->
   </nasal>
 
 </PropertyList>
