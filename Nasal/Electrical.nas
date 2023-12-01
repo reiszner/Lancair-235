@@ -190,6 +190,10 @@ init_switches = func() {
   append(output_list,"dme");
   append(watt_list,0.2);
 
+  append(switch_list,"controls/electric/avionics-switch");
+  append(output_list,"dme[1]");
+  append(watt_list,0.2);
+
 # append(switch_list,"controls/electric/avionics-switch");
 # append(output_list,"gps");
 # append(watt_list,0.5);

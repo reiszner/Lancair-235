@@ -88,11 +88,15 @@
   <nav-radio>
     <name>nav</name>
     <number>1</number>
+    <power-supply>/systems/electrical/outputs/kns80</power-supply>
+    <minimum-supply-volts>24</minimum-supply-volts>
   </nav-radio>
 
   <dme>
     <name>dme</name>
     <number>0</number>
+    <power-supply>/systems/electrical/outputs/kns80</power-supply>
+    <minimum-supply-volts>24</minimum-supply-volts>
   </dme>
 
   <dme>

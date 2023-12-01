@@ -1,4 +1,4 @@
-var config = io.read_properties("Models/Instruments/Avionics/kap140/kap140-config.xml");
+var config = io.read_properties("Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-config.xml");
 
 var kap140_ap   = props.globals.initNode("autopilot/kap140/event/button-ap" ,  0, "BOOL");
 var kap140_hdg  = props.globals.initNode("autopilot/kap140/event/button-hdg",  0, "BOOL");
