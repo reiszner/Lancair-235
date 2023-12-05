@@ -121,14 +121,14 @@
       <file>Aircraft/Lancair-235/Nasal/convert.nas</file>
       <file>Aircraft/Lancair-235/Nasal/Electrical.nas</file>
     </lancair235>
-    <!--ki252a-->
-      <!--file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kfc200/ki252a.nas</file-->
-    <!--/ki252a-->
+    <ki252a>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kfc200/ki252a.nas</file>
+    </ki252a>
     <chronograph>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/chronograph/chronograph.nas</file>
     </chronograph>
     <kns80>
-      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kns80/kns80.nas</file>
+      <file>Aircraft/Lancair-235/Nasal/kns80.nas</file>
     </kns80>
     <kcs55>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kcs55/kcs55.nas</file>

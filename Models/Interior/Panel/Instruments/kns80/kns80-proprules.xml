@@ -1,1667 +1,1240 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList include="kns80-config.xml">
-  
-  <filter>
-    <name>KNS80 power</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <input>
-      <condition>
-        <greater-than>
-          <property alias="../../../../../params/nav-volume"/>
-          <value>0.005</value>
-        </greater-than>
-      </condition>
-      <value>1</value>
-    </input>
-    <input>0</input>
-    <output alias="../../params/nav-power-btn"/>
-    <output alias="../../params/nav-ident"/>
-    <output alias="../../params/dme-power-btn"/>
-  </filter>
-  
-  <filter>
-    <name>KNS80 powered</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-power-btn"/>
-        <greater-than>
-          <property alias="../../../../../params/power-supplied"/>
-          <expression>
-            <product>
-              <property alias="../../../../../../../params/power-nominal"/>
-              <value>0.7</value>
-            </product>
-          </expression>
-        </greater-than>
-      </condition>
-      <value>1</value>
-    </input>
-    <input>0</input>
-    <output>instrumentation/kns80/powered</output>
-  </filter>
-  
-  <filter>
-    <name>KNS80 unpowered</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <not><property>instrumentation/kns80/powered</property></not>
-      </condition>
-    </enable>
-    <input>0</input>
-    <output>instrumentation/kns80/nav-mode</output>
-    <output>instrumentation/kns80/data-mode</output>
-    <output>instrumentation/kns80/display</output>
-    <output>instrumentation/kns80/use</output>
-  </filter>
-  
-  <!-- number cruncher -->
-  
-  <filter>
-    <name>crunch waypoint 1 frequency</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[0]/frequency</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <value>100</value>
-          <property>instrumentation/kns80/wpt[0]/freq1</property>
-          <product>
-            <property>instrumentation/kns80/wpt[0]/freq2</property>
-            <value>0.01</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[0]/frequency</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 1 radial</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[0]/radial</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <product>
-            <property>instrumentation/kns80/wpt[0]/rad1</property>
-            <value>10</value>
-          </product>
-          <property>instrumentation/kns80/wpt[0]/rad2</property>
-          <product>
-            <property>instrumentation/kns80/wpt[0]/rad3</property>
-            <value>0.1</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[0]/radial</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 1 distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[0]/distance</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <product>
-            <property>instrumentation/kns80/wpt[0]/dist1</property>
-            <value>10</value>
-          </product>
-          <property>instrumentation/kns80/wpt[0]/dist2</property>
-          <product>
-            <property>instrumentation/kns80/wpt[0]/dist3</property>
-            <value>0.1</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[0]/distance</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 2 frequency</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[1]/frequency</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <value>100</value>
-          <property>instrumentation/kns80/wpt[1]/freq1</property>
-          <product>
-            <property>instrumentation/kns80/wpt[1]/freq2</property>
-            <value>0.01</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[1]/frequency</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 2 radial</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[1]/radial</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <product>
-            <property>instrumentation/kns80/wpt[1]/rad1</property>
-            <value>10</value>
-          </product>
-          <property>instrumentation/kns80/wpt[1]/rad2</property>
-          <product>
-            <property>instrumentation/kns80/wpt[1]/rad3</property>
-            <value>0.1</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[1]/radial</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 2 distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[1]/distance</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <product>
-            <property>instrumentation/kns80/wpt[1]/dist1</property>
-            <value>10</value>
-          </product>
-          <property>instrumentation/kns80/wpt[1]/dist2</property>
-          <product>
-            <property>instrumentation/kns80/wpt[1]/dist3</property>
-            <value>0.1</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[1]/distance</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 3 frequency</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[2]/frequency</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <value>100</value>
-          <property>instrumentation/kns80/wpt[2]/freq1</property>
-          <product>
-            <property>instrumentation/kns80/wpt[2]/freq2</property>
-            <value>0.01</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[2]/frequency</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 3 radial</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[2]/radial</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <product>
-            <property>instrumentation/kns80/wpt[2]/rad1</property>
-            <value>10</value>
-          </product>
-          <property>instrumentation/kns80/wpt[2]/rad2</property>
-          <product>
-            <property>instrumentation/kns80/wpt[2]/rad3</property>
-            <value>0.1</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[2]/radial</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 3 distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[2]/distance</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <product>
-            <property>instrumentation/kns80/wpt[2]/dist1</property>
-            <value>10</value>
-          </product>
-          <property>instrumentation/kns80/wpt[2]/dist2</property>
-          <product>
-            <property>instrumentation/kns80/wpt[2]/dist3</property>
-            <value>0.1</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[2]/distance</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 4 frequency</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[3]/frequency</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <value>100</value>
-          <property>instrumentation/kns80/wpt[3]/freq1</property>
-          <product>
-            <property>instrumentation/kns80/wpt[3]/freq2</property>
-            <value>0.01</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[3]/frequency</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 4 radial</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[3]/radial</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <product>
-            <property>instrumentation/kns80/wpt[3]/rad1</property>
-            <value>10</value>
-          </product>
-          <property>instrumentation/kns80/wpt[3]/rad2</property>
-          <product>
-            <property>instrumentation/kns80/wpt[3]/rad3</property>
-            <value>0.1</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[3]/radial</output>
-  </filter>
-  
-  <filter>
-    <name>crunch waypoint 4 distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/wpt[3]/distance</property>
-          <value>0</value>
-        </less-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <product>
-            <property>instrumentation/kns80/wpt[3]/dist1</property>
-            <value>10</value>
-          </product>
-          <property>instrumentation/kns80/wpt[3]/dist2</property>
-          <product>
-            <property>instrumentation/kns80/wpt[3]/dist3</property>
-            <value>0.1</value>
-          </product>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/wpt[3]/distance</output>
-  </filter>
-  
-  <!-- displayed -->
-  
-  <filter>
-    <name>displayed frequency</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <property>instrumentation/kns80/powered</property>
-    </enable>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>0</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[0]/frequency</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[0]/frequency</property>
-    </input>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>1</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[1]/frequency</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[1]/frequency</property>
-    </input>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>2</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[2]/frequency</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[2]/frequency</property>
-    </input>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>3</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[3]/frequency</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[3]/frequency</property>
-    </input>
-    <output>instrumentation/kns80/displayed-frequency</output>
-  </filter>
-  
-  <filter>
-    <name>displayed radial</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <property>instrumentation/kns80/powered</property>
-    </enable>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>0</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[0]/radial</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[0]/radial</property>
-    </input>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>1</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[1]/radial</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[1]/radial</property>
-    </input>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>2</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[2]/radial</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[2]/radial</property>
-    </input>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>3</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[3]/radial</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[3]/radial</property>
-    </input>
-    <output>instrumentation/kns80/displayed-radial</output>
-  </filter>
-  
-  <filter>
-    <name>displayed distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <property>instrumentation/kns80/powered</property>
-    </enable>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>0</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[0]/distance</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[0]/distance</property>
-    </input>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>1</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[1]/distance</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[1]/distance</property>
-    </input>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>2</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[2]/distance</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[2]/distance</property>
-    </input>
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/display</property>
-          <value>3</value>
-        </equals>
-        <greater-than>
-          <property>instrumentation/kns80/wpt[3]/distance</property>
-          <value>-0.5</value>
-        </greater-than>
-      </condition>
-      <property>instrumentation/kns80/wpt[3]/distance</property>
-    </input>
-    <output>instrumentation/kns80/displayed-distance</output>
-  </filter>
-  
-  <!-- set used frequency -->
-  
-  <filter>
-    <name>set frequency to waypoint 1</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>0</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[0]/frequency</property>
-          <property alias="../../../../../params/nav-frequency"/>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[0]/frequency</input>
-    <output>instrumentation/kns80/used-frequency</output>
-    <output alias="../../params/nav-frequency"/>
-  </filter>
-  
-  <filter>
-    <name>set frequency to waypoint 2</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>1</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[1]/frequency</property>
-          <property alias="../../../../../params/nav-frequency"/>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[1]/frequency</input>
-    <output>instrumentation/kns80/used-frequency</output>
-    <output alias="../../params/nav-frequency"/>
-  </filter>
-  
-  <filter>
-    <name>set frequency to waypoint 3</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>2</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[2]/frequency</property>
-          <property alias="../../../../../params/nav-frequency"/>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[2]/frequency</input>
-    <output>instrumentation/kns80/used-frequency</output>
-    <output alias="../../params/nav-frequency"/>
-  </filter>
-  
-  <filter>
-    <name>set frequency to waypoint 4</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>3</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[3]/frequency</property>
-          <property alias="../../../../../params/nav-frequency"/>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[3]/frequency</input>
-    <output>instrumentation/kns80/used-frequency</output>
-    <output alias="../../params/nav-frequency"/>
-  </filter>
-  
-  <filter>
-    <name>set DME frequency if not holded</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <not><property>instrumentation/kns80/dme-hold</property></not>
-        <not-equals>
-          <property alias="../../../../../params/dme-frequency"/>
-          <property alias="../../../../../params/nav-frequency"/>
-        </not-equals>
-      </condition>
-    </enable>
-    <input alias="../../params/nav-frequency"/>
-    <output alias="../../params/dme-frequency"/>
-  </filter>
-  
-  <!-- set used radial -->
-  
-  <filter>
-    <name>set radial to waypoint 1</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>0</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[0]/radial</property>
-          <property>instrumentation/kns80/used-radial</property>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[0]/radial</input>
-    <output>instrumentation/kns80/used-radial</output>
-  </filter>
-  
-  <filter>
-    <name>set radial to waypoint 2</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>1</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[1]/radial</property>
-          <property>instrumentation/kns80/used-radial</property>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[1]/radial</input>
-    <output>instrumentation/kns80/used-radial</output>
-  </filter>
-  
-  <filter>
-    <name>set radial to waypoint 3</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>2</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[2]/radial</property>
-          <property>instrumentation/kns80/used-radial</property>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[2]/radial</input>
-    <output>instrumentation/kns80/used-radial</output>
-  </filter>
-  
-  <filter>
-    <name>set radial to waypoint 4</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>3</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[3]/radial</property>
-          <property>instrumentation/kns80/used-radial</property>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[3]/radial</input>
-    <output>instrumentation/kns80/used-radial</output>
-  </filter>
-  
-  <!-- set used distance -->
-  
-  <filter>
-    <name>set distance to waypoint 1</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>0</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[0]/distance</property>
-          <property>instrumentation/kns80/used-distance</property>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[0]/distance</input>
-    <output>instrumentation/kns80/used-distance</output>
-  </filter>
-  
-  <filter>
-    <name>set distance to waypoint 2</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>1</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[1]/distance</property>
-          <property>instrumentation/kns80/used-distance</property>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[1]/distance</input>
-    <output>instrumentation/kns80/used-distance</output>
-  </filter>
-  
-  <filter>
-    <name>set distance to waypoint 3</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>2</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[2]/distance</property>
-          <property>instrumentation/kns80/used-distance</property>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[2]/distance</input>
-    <output>instrumentation/kns80/used-distance</output>
-  </filter>
-  
-  <filter>
-    <name>set distance to waypoint 4</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property>instrumentation/kns80/powered</property>
-        <equals>
-          <property>instrumentation/kns80/use</property>
-          <value>3</value>
-        </equals>
-        <not-equals>
-          <property>instrumentation/kns80/wpt[3]/distance</property>
-          <property>instrumentation/kns80/used-distance</property>
-        </not-equals>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/wpt[3]/distance</input>
-    <output>instrumentation/kns80/used-distance</output>
-  </filter>
-  
-  <!-- magnetic declination/variation of that VOR-station -->
-  
-  <filter>
-    <name>VOR declination</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <property alias="../../../params/nav-in-range"/>
-    </enable>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-loc"/>
-      </condition>
-      <value>0.0</value>
-    </input>
-    <input>
-      <expression>
-        <dif>
-          <property alias="../../../../../params/nav-target-radial-deg"/>
-          <property alias="../../../../../params/nav-selected-deg"/>
-        </dif>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/nav/internal/station-declination</output>
-    <period>
-      <min>-180.0</min>
-      <max>180.0</max>
-    </period>
-  </filter>
-  
-  <!-- Coordinates Aircraft to VOR-station -->
-  
-  <filter>
-    <name>AC-VOR X-distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <greater-than>
-        <property>instrumentation/kns80/nav-mode</property>
-        <value>1</value>
-      </greater-than>
-      <property alias="../../../params/nav-in-range"/>
-      <property alias="../../../params/dme-in-range"/>
-    </enable>
-    <input>
-      <expression>
-        <product>
-          <sin>
-            <deg2rad><property alias="../../../../../../../params/nav-heading-deg"/></deg2rad>
-          </sin>
-          <property alias="../../../../../params/dme-indicated-distance-nm"/>
-        </product>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/nav/internal/aircraft-station-x</output>
-  </filter>
-  
-  <filter>
-    <name>AC-VOR Y-distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <greater-than>
-        <property>instrumentation/kns80/nav-mode</property>
-        <value>1</value>
-      </greater-than>
-      <property alias="../../../params/nav-in-range"/>
-      <property alias="../../../params/dme-in-range"/>
-    </enable>
-    <input>
-      <expression>
-        <product>
-          <cos>
-            <deg2rad><property alias="../../../../../../../params/nav-heading-deg"/></deg2rad>
-          </cos>
-          <property alias="../../../../../params/dme-indicated-distance-nm"/>
-        </product>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/nav/internal/aircraft-station-y</output>
-  </filter>
-  
-  <!-- Coordinates VOR-station to Waypoint -->
-  
-  <filter>
-    <name>VOR-WP X-distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <greater-than>
-        <property>instrumentation/kns80/nav-mode</property>
-        <value>1</value>
-      </greater-than>
-      <property alias="../../../params/nav-in-range"/>
-      <property alias="../../../params/dme-in-range"/>
-    </enable>
-    <input>
-      <expression>
-        <product>
-          <sin>
-            <deg2rad>
-              <sum>
-                <property>instrumentation/kns80/used-radial</property>
-                <property>instrumentation/kns80/nav/internal/station-declination</property>
-              </sum>
-            </deg2rad>
-          </sin>
-          <property>instrumentation/kns80/used-distance</property>
-        </product>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/nav/internal/station-waypoint-x</output>
-  </filter>
-  
-  <filter>
-    <name>VOR-WP Y-distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <greater-than>
-        <property>instrumentation/kns80/nav-mode</property>
-        <value>1</value>
-      </greater-than>
-      <property alias="../../../params/nav-in-range"/>
-      <property alias="../../../params/dme-in-range"/>
-    </enable>
-    <input>
-      <expression>
-        <product>
-          <cos>
-            <deg2rad>
-              <sum>
-                <property>instrumentation/kns80/used-radial</property>
-                <property>instrumentation/kns80/nav/internal/station-declination</property>
-              </sum>
-            </deg2rad>
-          </cos>
-          <property>instrumentation/kns80/used-distance</property>
-        </product>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/nav/internal/station-waypoint-y</output>
-  </filter>
-  
-  <!-- Coordinates Aircraft to Waypoint -->
-  
-  <filter>
-    <name>AC-WP X-distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <greater-than>
-        <property>instrumentation/kns80/nav-mode</property>
-        <value>1</value>
-      </greater-than>
-      <property alias="../../../params/nav-in-range"/>
-      <property alias="../../../params/dme-in-range"/>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <property>instrumentation/kns80/nav/internal/aircraft-station-x</property>
-          <property>instrumentation/kns80/nav/internal/station-waypoint-x</property>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/nav/internal/aircraft-waypoint-x</output>
-  </filter>
-  
-  <filter>
-    <name>AC-WP Y-distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <greater-than>
-        <property>instrumentation/kns80/nav-mode</property>
-        <value>1</value>
-      </greater-than>
-      <property alias="../../../params/nav-in-range"/>
-      <property alias="../../../params/dme-in-range"/>
-    </enable>
-    <input>
-      <expression>
-        <sum>
-          <property>instrumentation/kns80/nav/internal/aircraft-station-y</property>
-          <property>instrumentation/kns80/nav/internal/station-waypoint-y</property>
-        </sum>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/nav/internal/aircraft-waypoint-y</output>
-  </filter>
-  
-  <!-- angle and distance from Aircraft to Waypoint  -->
-  
-  <filter>
-    <name>AC-WP distance meter</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <property alias="../../../params/nav-in-range"/>
-      <property alias="../../../params/dme-in-range"/>
-    </enable>
-    <input>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/nav-mode</property>
-          <value>2</value>
-        </less-than>
-      </condition>
-      <property alias="../../../params/dme-indicated-distance-nm"/>
-    </input>
-    <input>
-      <expression>
-        <sqrt>
-          <sum>
-            <product>
-              <property>instrumentation/kns80/nav/internal/aircraft-waypoint-x</property>
-              <property>instrumentation/kns80/nav/internal/aircraft-waypoint-x</property>
-            </product>
-            <product>
-              <property>instrumentation/kns80/nav/internal/aircraft-waypoint-y</property>
-              <property>instrumentation/kns80/nav/internal/aircraft-waypoint-y</property>
-            </product>
-          </sum>
-        </sqrt>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/nav/nav-distance-nm</output>
-  </filter>
-  
-  <filter>
-    <name>AC-WP angle</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <property alias="../../../params/nav-in-range"/>
-      <property alias="../../../params/dme-in-range"/>
-    </enable>
-    <!--
-    <input>
-    <condition>
-    <less-than>
-    <property>instrumentation/kns80/nav-mode</property>
-    <value>2</value>
-    </less-than>
-    </condition>
-    <property alias="../../../params/nav-heading-deg"/>
-    </input>
-    -->
-    <!-- avoid division by zero -->
-    <input>
-      <condition>
-        <equals>
-          <property>instrumentation/kns80/nav/nav-distance-nm</property>
-          <value>0.0</value>
-        </equals>
-      </condition>
-      <value>0.0</value>
-    </input>
-    <input>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/nav/internal/aircraft-waypoint-x</property>
-          <value>0.0</value>
-        </less-than>
-      </condition>
-      <expression>
-        <dif>
-          <value>360.0</value>
-          <rad2deg>
-            <acos>
-              <div>
-                <property>instrumentation/kns80/nav/internal/aircraft-waypoint-y</property>
-                <property>instrumentation/kns80/nav/nav-distance-nm</property>
-              </div>
-            </acos>
-          </rad2deg>
-        </dif>
-      </expression>
-    </input>
-    <input>
-      <expression>
-        <rad2deg>
-          <acos>
-            <div>
-              <property>instrumentation/kns80/nav/internal/aircraft-waypoint-y</property>
-              <property>instrumentation/kns80/nav/nav-distance-nm</property>
-            </div>
-          </acos>
-        </rad2deg>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/nav/heading-deg</output>
-    <period>
-      <min>0.0</min>
-      <max>360.0</max>
-    </period>
-  </filter>
-  
-  <!-- radial deviation -->
-  
-  <filter>
-    <name>deviation-deg</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/nav-loc"/>
-      </condition>
-      <expression>
-        <dif>
-          <property alias="../../../../../params/nav-heading-deg"/>
-          <property alias="../../../../../params/nav-target-radial-deg"/>
-          <value>180</value>
-        </dif>
-      </expression>
-    </input>
-    <input>
-      <condition>
-        <less-than>
-          <property>instrumentation/kns80/nav-mode</property>
-          <value>2</value>
-        </less-than>
-        <property alias="../../../../params/nav-in-range"/>
-      </condition>
-      <expression>
-        <dif>
-          <property>instrumentation/nav[1]/radials/actual-deg</property>
-          <property>instrumentation/nav[1]/radials/selected-deg</property>
-        </dif>
-      </expression>
-    </input>
-    
-    <input>
-      <condition>
-        <greater-than>
-          <property>instrumentation/kns80/nav-mode</property>
-          <value>1</value>
-        </greater-than>
-        <property alias="../../../../params/nav-in-range"/>
-      </condition>
-      <expression>
-        <dif>
-          <property>instrumentation/kns80/nav/heading-deg</property>
-          <property alias="../../../../../params/nav-selected-deg"/>
-          <property>instrumentation/kns80/nav/internal/station-declination</property>
-          <value>180.0</value>
-        </dif>
-      </expression>
-    </input>
-    
-    <input>0.0</input>
-    <output>instrumentation/kns80/nav/heading-deflection-deg</output>
-    <period>
-      <min>-180.0</min>
-      <max>180.0</max>
-    </period>
-  </filter>
-  
-  <!-- from/to flag -->
-  
-  <filter>
-    <name>from-flag</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <or>
-          <less-than>
-            <property>instrumentation/kns80/nav-mode</property>
-            <value>2</value>
-          </less-than>
-          <property alias="../../../../../params/nav-loc"/>
-        </or>
-      </condition>
-      <property alias="../../../params/nav-from-flag"/>
-    </input>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <greater-than>
-          <property>instrumentation/kns80/nav-mode</property>
-          <value>1</value>
-        </greater-than>
-        <less-than>
-          <expression>
-            <abs><property>instrumentation/kns80/nav/heading-deflection-deg</property></abs>
-          </expression>
-          <value>90</value>
-        </less-than>
-      </condition>
-      <value>1</value>
-    </input>
-    <input>0</input>
-    <output>instrumentation/kns80/nav/from-flag</output>
-  </filter>
-  
-  <filter>
-    <name>to-flag</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <or>
-          <less-than>
-            <property>instrumentation/kns80/nav-mode</property>
-            <value>2</value>
-          </less-than>
-          <property alias="../../../../../params/nav-loc"/>
-        </or>
-      </condition>
-      <property alias="../../../params/nav-to-flag"/>
-    </input>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <greater-than>
-          <property>instrumentation/kns80/nav-mode</property>
-          <value>1</value>
-        </greater-than>
-        <greater-than>
-          <expression>
-            <abs><property>instrumentation/kns80/nav/heading-deflection-deg</property></abs>
-          </expression>
-          <value>90</value>
-        </greater-than>
-      </condition>
-      <value>1</value>
-    </input>
-    <input>0</input>
-    <output>instrumentation/kns80/nav/to-flag</output>
-  </filter>
-  
-  <!-- needle deflection -->
-  
-  <filter>
-    <name>needle-deflection-deg</name>
-    <debug>false</debug>
-    <type>gain</type>
-    <gain>-1.0</gain>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <property>instrumentation/kns80/nav/from-flag</property>
-      </condition>
-      <property>instrumentation/kns80/nav/heading-deflection-deg</property>
-    </input>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <property>instrumentation/kns80/nav/to-flag</property>
-      </condition>
-      <expression>
-        <dif>
-          <value>180</value>
-          <property>instrumentation/kns80/nav/heading-deflection-deg</property>
-        </dif>
-      </expression>
-    </input>
-    <input>0.0</input>
-    <output>instrumentation/kns80/nav/heading-needle-deflection</output>
-    <period>
-      <min>-180.0</min>
-      <max>180.0</max>
-    </period>
-    <min>-10</min>
-    <max>10</max>
-  </filter>
-  
-  <filter>
-    <name>needle-deflection-nm</name>
-    <debug>false</debug>
-    <type>gain</type>
-    <gain>-1.0</gain>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-      </condition>
-      <expression>
-        <product>
-          <sin>
-            <deg2rad><property>instrumentation/kns80/nav/heading-deflection-deg</property></deg2rad>
-          </sin>
-          <property>instrumentation/kns80/nav/nav-distance-nm</property>
-        </product>
-      </expression>
-    </input>
-    <input>0.0</input>
-    <output>instrumentation/kns80/nav/heading-needle-deflection-nm</output>
-    <min>-5</min>
-    <max>5</max>
-  </filter>
-  
-  <filter>
-    <name>needle-deflection-norm</name>
-    <debug>false</debug>
-    <type>gain</type>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <equals>
-          <property>instrumentation/kns80/nav-mode</property>
-          <value>0</value>
-        </equals>
-        <not><property alias="../../../../../params/nav-loc"/></not>
-      </condition>
-      <expression>
-        <div>
-          <property>instrumentation/kns80/nav/heading-needle-deflection</property>
-          <value>10</value>
-        </div>
-      </expression>
-    </input>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <equals>
-          <property>instrumentation/kns80/nav-mode</property>
-          <value>0</value>
-        </equals>
-        <property alias="../../../../params/nav-loc"/>
-      </condition>
-      <expression>
-        <div>
-          <property>instrumentation/kns80/nav/heading-needle-deflection</property>
-          <value>4</value>
-        </div>
-      </expression>
-    </input>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <or>
-          <equals>
-            <property>instrumentation/kns80/nav-mode</property>
-            <value>3</value>
-          </equals>
-          <property alias="../../../../../params/nav-loc"/>
-        </or>
-      </condition>
-      <expression>
-        <div>
-          <property>instrumentation/kns80/nav/heading-needle-deflection-nm</property>
-          <value>1.25</value>
-        </div>
-      </expression>
-    </input>
-    <input>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-      </condition>
-      <expression>
-        <div>
-          <property>instrumentation/kns80/nav/heading-needle-deflection-nm</property>
-          <value>5</value>
-        </div>
-      </expression>
-    </input>
-    <input>0.0</input>
-    <output>instrumentation/kns80/nav/heading-needle-deflection-norm</output>
-    <min>-1</min>
-    <max>1</max>
-  </filter>
-  
-  <!-- fake dme -->
-  
-  <filter>
-    <name>dme watchdog</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <equals>
-          <property>instrumentation/kns80/dme/internal/run[0]</property>
-          <value>0</value>
-        </equals>
-        <greater-than>
-          <expression>
-            <dif>
-              <property>sim/time/elapsed-sec</property>
-              <property>instrumentation/kns80/dme/internal/time</property>
-            </dif>
-          </expression>
-          <value>1.0</value>
-        </greater-than>
-      </condition>
-    </enable>
-    <input>1</input>
-    <output>instrumentation/kns80/dme/internal/run[0]</output>
-  </filter>
-  
-  <filter>
-    <name>dme read time</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <greater-than>
-          <property>instrumentation/kns80/dme/internal/run[0]</property>
-          <value>0</value>
-        </greater-than>
-      </condition>
-    </enable>
-    <input>sim/time/elapsed-sec</input>
-    <output>instrumentation/kns80/dme/internal/time</output>
-    <output>instrumentation/kns80/dme/internal/run[1]</output>
-  </filter>
-  
-  <filter>
-    <name>dme read distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <greater-than>
-          <property>instrumentation/kns80/dme/internal/run[1]</property>
-          <value>0</value>
-        </greater-than>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/nav/nav-distance-nm</input>
-    <output>instrumentation/kns80/dme/indicated-distance-nm</output>
-    <output>instrumentation/kns80/dme/internal/run[2]</output>
-    <min>0</min>
-    <max>400</max>
-  </filter>
-  
-  <filter>
-    <name>dme kts calculate</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <greater-than>
-          <property>instrumentation/kns80/dme/internal/run[2]</property>
-          <value>0</value>
-        </greater-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <product>
-          <div>
-            <abs>
-              <dif>
-                <property>instrumentation/kns80/dme/indicated-distance-nm</property>
-                <property>instrumentation/kns80/dme/internal/distance-old</property>
-              </dif>
-            </abs>
-            <dif>
-              <property>instrumentation/kns80/dme/internal/time</property>
-              <property>instrumentation/kns80/dme/internal/time-old</property>
-            </dif>
-          </div>
-          <value>3600</value>
-        </product>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/dme/indicated-ground-speed-kt</output>
-    <output>instrumentation/kns80/dme/internal/run[3]</output>
-    <min>0</min>
-    <max>999</max>
-  </filter>
-  
-  <filter>
-    <name>dme min calculate</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <greater-than>
-          <property>instrumentation/kns80/dme/internal/run[3]</property>
-          <value>0</value>
-        </greater-than>
-      </condition>
-    </enable>
-    <input>
-      <expression>
-        <div>
-          <property>instrumentation/kns80/dme/indicated-distance-nm</property>
-          <product>
-            <div>
-              <abs>
+
+    <filter>
+        <name>KNS80 power</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <input>
+            <condition>
+                <greater-than>
+                    <property alias="../../../../../params/nav-volume"/>
+                    <value>0.005</value>
+                </greater-than>
+            </condition>
+            <value>1</value>
+        </input>
+        <input>0</input>
+        <output alias="../../params/nav-power-btn"/>
+        <output alias="../../params/nav-ident"/>
+        <output alias="../../params/dme-power-btn"/>
+    </filter>
+
+    <filter>
+        <name>KNS80 powered</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <input>
+            <condition>
+                <property alias="../../../../params/nav-power-btn"/>
+                <greater-than>
+                    <property alias="../../../../../params/power-supplied"/>
+                    <expression>
+                        <product>
+                            <property alias="../../../../../../../params/power-nominal"/>
+                            <value>0.7</value>
+                        </product>
+                    </expression>
+                </greater-than>
+            </condition>
+            <value>1</value>
+        </input>
+        <input>0</input>
+        <output>instrumentation/kns80/powered</output>
+    </filter>
+
+    <filter>
+        <name>KNS80 unpowered</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <not><property>instrumentation/kns80/powered</property></not>
+            </condition>
+        </enable>
+        <input>0</input>
+        <output>instrumentation/kns80/nav-mode</output>
+        <output>instrumentation/kns80/data-mode</output>
+        <output>instrumentation/kns80/display</output>
+        <output>instrumentation/kns80/use</output>
+    </filter>
+
+<!-- displayed -->
+
+    <filter>
+        <name>displayed frequency</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <property>instrumentation/kns80/powered</property>
+        </enable>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>0</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[0]/frequency</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[0]/frequency</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>1</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[1]/frequency</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[1]/frequency</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>2</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[2]/frequency</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[2]/frequency</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>3</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[3]/frequency</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[3]/frequency</property>
+        </input>
+        <output>instrumentation/kns80/displayed-frequency</output>
+    </filter>
+
+    <filter>
+        <name>displayed radial</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <property>instrumentation/kns80/powered</property>
+        </enable>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>0</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[0]/radial</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[0]/radial</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>1</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[1]/radial</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[1]/radial</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>2</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[2]/radial</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[2]/radial</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>3</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[3]/radial</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[3]/radial</property>
+        </input>
+        <output>instrumentation/kns80/displayed-radial</output>
+    </filter>
+
+    <filter>
+        <name>displayed distance</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <property>instrumentation/kns80/powered</property>
+        </enable>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>0</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[0]/distance</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[0]/distance</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>1</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[1]/distance</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[1]/distance</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>2</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[2]/distance</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[2]/distance</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/display</property>
+                    <value>3</value>
+                </equals>
+                <greater-than>
+                    <property>instrumentation/kns80/wpt[3]/distance</property>
+                    <value>-0.5</value>
+                </greater-than>
+            </condition>
+            <property>instrumentation/kns80/wpt[3]/distance</property>
+        </input>
+        <output>instrumentation/kns80/displayed-distance</output>
+    </filter>
+
+    <filter>
+        <name>displayed digits</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <property>instrumentation/kns80/powered</property>
+        </enable>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/data-mode</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <property>instrumentation/kns80/displayed-frequency</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/data-mode</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <property>instrumentation/kns80/displayed-radial</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>instrumentation/kns80/data-mode</property>
+                    <value>2</value>
+                </equals>
+            </condition>
+            <property>instrumentation/kns80/displayed-distance</property>
+        </input>
+        <output>instrumentation/kns80/displayed-digits</output>
+    </filter>
+
+    <filter>
+        <name>displayed nautical miles</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <property>instrumentation/kns80/powered</property>
+        </enable>
+        <input>
+            <condition>
+                <less-than>
+                    <property>instrumentation/kns80/dme/indicated-distance-nm</property>
+                    <value>99.5</value>
+                </less-than>
+            </condition>
+            <expression>
+                <floor>
+                    <sum>
+                        <product>
+                            <property>instrumentation/kns80/dme/indicated-distance-nm</property>
+                            <value>10</value>
+                        </product>
+                        <value>0.5</value>
+                    </sum>
+                </floor>
+            </expression>
+        </input>
+        <input>
+            <expression>
+                <floor>
+                    <sum>
+                        <property>instrumentation/kns80/dme/indicated-distance-nm</property>
+                        <value>0.5</value>
+                    </sum>
+                </floor>
+            </expression>
+        </input>
+        <input>instrumentation/kns80/dme/indicated-distance-nm</input>
+        <output>instrumentation/kns80/displayed-indicated-nm</output>
+    </filter>
+
+<!-- set used frequency -->
+
+    <filter>
+        <name>set frequency to waypoint 1</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>0</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[0]/frequency</property>
+                    <property alias="../../../../../params/nav-frequency"/>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[0]/frequency</input>
+        <output alias="../../params/nav-frequency"/>
+    </filter>
+
+    <filter>
+        <name>set frequency to waypoint 2</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>1</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[1]/frequency</property>
+                    <property alias="../../../../../params/nav-frequency"/>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[1]/frequency</input>
+        <output alias="../../params/nav-frequency"/>
+    </filter>
+
+    <filter>
+        <name>set frequency to waypoint 3</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>2</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[2]/frequency</property>
+                    <property alias="../../../../../params/nav-frequency"/>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[2]/frequency</input>
+        <output alias="../../params/nav-frequency"/>
+    </filter>
+
+    <filter>
+        <name>set frequency to waypoint 4</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>3</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[3]/frequency</property>
+                    <property alias="../../../../../params/nav-frequency"/>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[3]/frequency</input>
+        <output alias="../../params/nav-frequency"/>
+    </filter>
+
+    <filter>
+        <name>set DME frequency if not holded</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <not><property>instrumentation/kns80/dme-hold</property></not>
+                <not-equals>
+                    <property alias="../../../../../params/dme-frequency"/>
+                    <property alias="../../../../../params/nav-frequency"/>
+                </not-equals>
+            </condition>
+        </enable>
+        <input alias="../../params/nav-frequency"/>
+        <output alias="../../params/dme-frequency"/>
+    </filter>
+
+<!-- set used radial -->
+
+    <filter>
+        <name>set radial to waypoint 1</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>0</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[0]/radial</property>
+                    <property>instrumentation/kns80/used-radial</property>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[0]/radial</input>
+        <output>instrumentation/kns80/used-radial</output>
+    </filter>
+
+    <filter>
+        <name>set radial to waypoint 2</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>1</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[1]/radial</property>
+                    <property>instrumentation/kns80/used-radial</property>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[1]/radial</input>
+        <output>instrumentation/kns80/used-radial</output>
+    </filter>
+
+    <filter>
+        <name>set radial to waypoint 3</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>2</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[2]/radial</property>
+                    <property>instrumentation/kns80/used-radial</property>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[2]/radial</input>
+        <output>instrumentation/kns80/used-radial</output>
+    </filter>
+
+    <filter>
+        <name>set radial to waypoint 4</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>3</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[3]/radial</property>
+                    <property>instrumentation/kns80/used-radial</property>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[3]/radial</input>
+        <output>instrumentation/kns80/used-radial</output>
+    </filter>
+
+<!-- set used distance -->
+
+    <filter>
+        <name>set distance to waypoint 1</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>0</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[0]/distance</property>
+                    <property>instrumentation/kns80/used-distance</property>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[0]/distance</input>
+        <output>instrumentation/kns80/used-distance</output>
+    </filter>
+
+    <filter>
+        <name>set distance to waypoint 2</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>1</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[1]/distance</property>
+                    <property>instrumentation/kns80/used-distance</property>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[1]/distance</input>
+        <output>instrumentation/kns80/used-distance</output>
+    </filter>
+
+    <filter>
+        <name>set distance to waypoint 3</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>2</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[2]/distance</property>
+                    <property>instrumentation/kns80/used-distance</property>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[2]/distance</input>
+        <output>instrumentation/kns80/used-distance</output>
+    </filter>
+
+    <filter>
+        <name>set distance to waypoint 4</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <condition>
+                <property>instrumentation/kns80/powered</property>
+                <equals>
+                    <property>instrumentation/kns80/use</property>
+                    <value>3</value>
+                </equals>
+                <not-equals>
+                    <property>instrumentation/kns80/wpt[3]/distance</property>
+                    <property>instrumentation/kns80/used-distance</property>
+                </not-equals>
+            </condition>
+        </enable>
+        <input>instrumentation/kns80/wpt[3]/distance</input>
+        <output>instrumentation/kns80/used-distance</output>
+    </filter>
+
+<!-- in-range flag -->
+
+    <filter>
+        <name>in-range flag</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <input>
+            <condition>
+                <property alias="../../../../params/nav-in-range"/>
+                <or>
+                    <less-than>
+                        <property>instrumentation/kns80/nav-mode</property>
+                        <value>2</value>
+                    </less-than>
+                    <and>
+                        <property alias="../../../../../../params/dme-in-range"/>
+                        <equals>
+                            <property alias="../../../../../../../params/nav-frequency"/>
+                            <property alias="../../../../../../../params/dme-frequency"/>
+                        </equals>
+                    </and>
+                </or>
+            </condition>
+            <value>1</value>
+        </input>
+        <input>0</input>
+        <output>instrumentation/kns80/nav/in-range</output>
+    </filter>
+
+<!-- magnetic declination/variation of that VOR-station -->
+
+    <filter>
+        <name>VOR declination</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <property alias="../../../params/nav-in-range"/>
+        </enable>
+        <input>
+            <condition>
+                <property alias="../../../../params/nav-loc"/>
+            </condition>
+            <value>0.0</value>
+        </input>
+        <input>
+            <expression>
                 <dif>
-                  <property>instrumentation/kns80/dme/indicated-distance-nm</property>
-                  <property>instrumentation/kns80/dme/internal/distance-old</property>
+                    <property alias="../../../../../params/nav-target-radial-deg"/>
+                    <property alias="../../../../../params/nav-selected-deg"/>
                 </dif>
-              </abs>
-              <dif>
-                <property>instrumentation/kns80/dme/internal/time</property>
-                <property>instrumentation/kns80/dme/internal/time-old</property>
-              </dif>
-            </div>
-            <value>60</value>
-          </product>
-        </div>
-      </expression>
-    </input>
-    <output>instrumentation/kns80/dme/indicated-time-min</output>
-    <output>instrumentation/kns80/dme/internal/run[4]</output>
-    <min>0</min>
-    <max>99</max>
-  </filter>
-  
-  <filter>
-    <name>store time</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <greater-than>
-          <property>instrumentation/kns80/dme/internal/run[4]</property>
-          <value>0</value>
-        </greater-than>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/dme/internal/time</input>
-    <output>instrumentation/kns80/dme/internal/time-old</output>
-    <output>instrumentation/kns80/dme/internal/run[5]</output>
-  </filter>
-  
-  <filter>
-    <name>store distance</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <greater-than>
-          <property>instrumentation/kns80/dme/internal/run[5]</property>
-          <value>0</value>
-        </greater-than>
-      </condition>
-    </enable>
-    <input>instrumentation/kns80/dme/indicated-distance-nm</input>
-    <output>instrumentation/kns80/dme/internal/distance-old</output>
-    <output>instrumentation/kns80/dme/internal/run[6]</output>
-  </filter>
-  
-  <filter>
-    <name>dme reset</name>
-    <type>gain</type>
-    <debug>false</debug>
-    <enable>
-      <condition>
-        <property alias="../../../../params/nav-in-range"/>
-        <property alias="../../../../params/dme-in-range"/>
-        <greater-than>
-          <property>instrumentation/kns80/dme/internal/run[6]</property>
-          <value>0</value>
-        </greater-than>
-      </condition>
-    </enable>
-    <input>0</input>
-    <output>instrumentation/kns80/dme/internal/run[0]</output>
-    <output>instrumentation/kns80/dme/internal/run[1]</output>
-    <output>instrumentation/kns80/dme/internal/run[2]</output>
-    <output>instrumentation/kns80/dme/internal/run[3]</output>
-    <output>instrumentation/kns80/dme/internal/run[4]</output>
-    <output>instrumentation/kns80/dme/internal/run[5]</output>
-    <output>instrumentation/kns80/dme/internal/run[6]</output>
-  </filter>
-  
+            </expression>
+        </input>
+        <output>instrumentation/kns80/nav/internal/station-declination</output>
+        <period>
+            <min>-180.0</min>
+            <max>180.0</max>
+        </period>
+    </filter>
+
+<!-- Coordinates Aircraft to VOR-station -->
+
+    <filter>
+        <name>AC-VOR X-distance</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <greater-than>
+                <property>instrumentation/kns80/nav-mode</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/kns80/nav/in-range</property>
+        </enable>
+        <input>
+            <expression>
+                <product>
+                    <sin>
+                        <deg2rad><property alias="../../../../../../../params/nav-heading-deg"/></deg2rad>
+                    </sin>
+                    <property alias="../../../../../params/dme-indicated-distance-nm"/>
+                </product>
+            </expression>
+        </input>
+        <output>instrumentation/kns80/nav/internal/aircraft-station-x</output>
+    </filter>
+
+    <filter>
+        <name>AC-VOR Y-distance</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <greater-than>
+                <property>instrumentation/kns80/nav-mode</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/kns80/nav/in-range</property>
+        </enable>
+        <input>
+            <expression>
+                <product>
+                    <cos>
+                        <deg2rad><property alias="../../../../../../../params/nav-heading-deg"/></deg2rad>
+                    </cos>
+                    <property alias="../../../../../params/dme-indicated-distance-nm"/>
+                </product>
+            </expression>
+        </input>
+        <output>instrumentation/kns80/nav/internal/aircraft-station-y</output>
+    </filter>
+
+<!-- Coordinates VOR-station to Waypoint -->
+
+    <filter>
+        <name>VOR-WP X-distance</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <greater-than>
+                <property>instrumentation/kns80/nav-mode</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/kns80/nav/in-range</property>
+        </enable>
+        <input>
+            <expression>
+                <product>
+                    <sin>
+                        <deg2rad>
+                            <sum>
+                                <property>instrumentation/kns80/used-radial</property>
+                                <property>instrumentation/kns80/nav/internal/station-declination</property>
+                            </sum>
+                        </deg2rad>
+                    </sin>
+                    <property>instrumentation/kns80/used-distance</property>
+                </product>
+            </expression>
+        </input>
+        <output>instrumentation/kns80/nav/internal/station-waypoint-x</output>
+    </filter>
+
+    <filter>
+        <name>VOR-WP Y-distance</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <greater-than>
+                <property>instrumentation/kns80/nav-mode</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/kns80/nav/in-range</property>
+        </enable>
+        <input>
+            <expression>
+                <product>
+                    <cos>
+                        <deg2rad>
+                            <sum>
+                                <property>instrumentation/kns80/used-radial</property>
+                                <property>instrumentation/kns80/nav/internal/station-declination</property>
+                            </sum>
+                        </deg2rad>
+                    </cos>
+                    <property>instrumentation/kns80/used-distance</property>
+                </product>
+            </expression>
+        </input>
+        <output>instrumentation/kns80/nav/internal/station-waypoint-y</output>
+    </filter>
+
+<!-- Coordinates Aircraft to Waypoint -->
+
+    <filter>
+        <name>AC-WP X-distance</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <greater-than>
+                <property>instrumentation/kns80/nav-mode</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/kns80/nav/in-range</property>
+        </enable>
+        <input>
+            <expression>
+                <sum>
+                    <property>instrumentation/kns80/nav/internal/aircraft-station-x</property>
+                    <property>instrumentation/kns80/nav/internal/station-waypoint-x</property>
+                </sum>
+            </expression>
+        </input>
+        <output>instrumentation/kns80/nav/internal/aircraft-waypoint-x</output>
+    </filter>
+
+    <filter>
+        <name>AC-WP Y-distance</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <greater-than>
+                <property>instrumentation/kns80/nav-mode</property>
+                <value>1</value>
+            </greater-than>
+            <property>instrumentation/kns80/nav/in-range</property>
+        </enable>
+        <input>
+            <expression>
+                <sum>
+                    <property>instrumentation/kns80/nav/internal/aircraft-station-y</property>
+                    <property>instrumentation/kns80/nav/internal/station-waypoint-y</property>
+                </sum>
+            </expression>
+        </input>
+        <output>instrumentation/kns80/nav/internal/aircraft-waypoint-y</output>
+    </filter>
+
+<!-- angle and distance from Aircraft to Waypoint  -->
+
+    <filter>
+        <name>AC-WP distance</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <property alias="../../../params/dme-in-range"/>
+        </enable>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>1</value>
+                </greater-than>
+                <property>instrumentation/kns80/nav/in-range</property>
+            </condition>
+            <expression>
+                <sqrt>
+                    <sum>
+                        <product>
+                            <property>instrumentation/kns80/nav/internal/aircraft-waypoint-x</property>
+                            <property>instrumentation/kns80/nav/internal/aircraft-waypoint-x</property>
+                        </product>
+                        <product>
+                            <property>instrumentation/kns80/nav/internal/aircraft-waypoint-y</property>
+                            <property>instrumentation/kns80/nav/internal/aircraft-waypoint-y</property>
+                        </product>
+                    </sum>
+                </sqrt>
+            </expression>
+        </input>
+        <input>
+            <property alias="../../../params/dme-indicated-distance-nm"/>
+        </input>
+        <output>instrumentation/kns80/nav/nav-distance-nm</output>
+    </filter>
+
+    <filter>
+        <name>AC-WP angle</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <property alias="../../../params/nav-in-range"/>
+            <not-equals>
+                <property>instrumentation/kns80/nav/nav-distance-nm</property>
+                <value>0.0</value>
+            </not-equals>
+        </enable>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>1</value>
+                </greater-than>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <less-than>
+                    <property>instrumentation/kns80/nav/internal/aircraft-waypoint-x</property>
+                    <value>0.0</value>
+                </less-than>
+            </condition>
+            <expression>
+                <dif>
+                    <value>360.0</value>
+                    <rad2deg>
+                        <acos>
+                            <div>
+                                <property>instrumentation/kns80/nav/internal/aircraft-waypoint-y</property>
+                                <property>instrumentation/kns80/nav/nav-distance-nm</property>
+                            </div>
+                        </acos>
+                    </rad2deg>
+                </dif>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>1</value>
+                </greater-than>
+                <property>instrumentation/kns80/nav/in-range</property>
+            </condition>
+            <expression>
+                <rad2deg>
+                    <acos>
+                        <div>
+                            <property>instrumentation/kns80/nav/internal/aircraft-waypoint-y</property>
+                            <property>instrumentation/kns80/nav/nav-distance-nm</property>
+                        </div>
+                    </acos>
+                </rad2deg>
+            </expression>
+        </input>
+        <input>
+            <less-than>
+                <property>instrumentation/kns80/nav-mode</property>
+                <value>2</value>
+            </less-than>
+            <property alias="../../../params/nav-heading-deg"/>
+        </input>
+        <output>instrumentation/kns80/nav/heading-deg</output>
+        <period>
+            <min>0.0</min>
+            <max>360.0</max>
+        </period>
+    </filter>
+
+<!-- radial deviation -->
+
+    <filter>
+        <name>deflection-deg</name>
+        <type>gain</type>
+        <debug>false</debug>
+
+        <input>
+            <condition>
+                <property alias="../../../../params/nav-loc"/>
+                <property alias="../../../../params/nav-in-range"/>
+            </condition>
+            <expression>
+                <dif>
+                    <property alias="../../../../../params/nav-heading-deg"/>
+                    <property alias="../../../../../params/nav-target-radial-deg"/>
+                </dif>
+            </expression>
+        </input>
+
+        <input>
+            <condition>
+                <greater-than>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>1</value>
+                </greater-than>
+                <property>instrumentation/kns80/nav/in-range</property>
+            </condition>
+            <expression>
+                <dif>
+                    <property>instrumentation/kns80/nav/heading-deg</property>
+                    <property alias="../../../../../params/nav-selected-deg"/>
+                    <property>instrumentation/kns80/nav/internal/station-declination</property>
+                    <!--value>180.0</value-->
+                </dif>
+            </expression>
+        </input>
+
+        <input>
+            <condition>
+                <less-than>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>2</value>
+                </less-than>
+                <property alias="../../../../params/nav-in-range"/>
+            </condition>
+            <expression>
+                <dif>
+                    <property alias="../../../../../params/nav-actual-deg"/>
+                    <property alias="../../../../../params/nav-selected-deg"/>
+                </dif>
+            </expression>
+        </input>
+
+        <input>0.0</input>
+        <output>instrumentation/kns80/nav/heading-deflection-deg</output>
+        <period>
+            <min>-90.0</min>
+            <max>90.0</max>
+        </period>
+    </filter>
+
+<!-- from/to flag -->
+
+    <filter>
+        <name>from-to-section</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <enable>
+            <property>instrumentation/kns80/nav/in-range</property>
+        </enable>
+        <input>
+            <expression>
+                <dif>
+                    <property>instrumentation/kns80/nav/heading-deg</property>
+                    <property alias="../../../../../params/nav-selected-deg"/>
+                    <property>instrumentation/kns80/nav/internal/station-declination</property>
+                </dif>
+            </expression>
+        </input>
+        <output>instrumentation/kns80/nav/from-to</output>
+        <period>
+            <min>-180.0</min>
+            <max>180.0</max>
+        </period>
+    </filter>
+
+    <filter>
+        <name>from-flag</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <input>
+            <condition>
+                <property alias="../../../../params/nav-in-range"/>
+                <or>
+                    <less-than>
+                        <property>instrumentation/kns80/nav-mode</property>
+                        <value>2</value>
+                    </less-than>
+                    <property alias="../../../../../params/nav-loc"/>
+                </or>
+            </condition>
+            <property alias="../../../params/nav-from-flag"/>
+        </input>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>1</value>
+                </greater-than>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <greater-than>
+                    <expression>
+                        <abs>
+                            <property>instrumentation/kns80/nav/from-to</property>
+                        </abs>
+                    </expression>
+                    <value>90</value>
+                </greater-than>
+            </condition>
+            <value>1</value>
+        </input>
+        <input>0</input>
+        <output>instrumentation/kns80/nav/from-flag</output>
+    </filter>
+
+    <filter>
+        <name>to-flag</name>
+        <type>gain</type>
+        <debug>false</debug>
+        <input>
+            <condition>
+                <property alias="../../../../params/nav-in-range"/>
+                <or>
+                    <less-than>
+                        <property>instrumentation/kns80/nav-mode</property>
+                        <value>2</value>
+                    </less-than>
+                    <property alias="../../../../../params/nav-loc"/>
+                </or>
+            </condition>
+            <property alias="../../../params/nav-to-flag"/>
+        </input>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>1</value>
+                </greater-than>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <less-than>
+                    <expression>
+                        <abs>
+                            <property>instrumentation/kns80/nav/from-to</property>
+                        </abs>
+                    </expression>
+                    <value>90</value>
+                </less-than>
+            </condition>
+            <value>1</value>
+        </input>
+        <input>0</input>
+        <output>instrumentation/kns80/nav/to-flag</output>
+    </filter>
+
+<!-- needle deflection -->
+
+    <filter>
+        <name>needle-deflection-deg</name>
+        <debug>false</debug>
+        <type>gain</type>
+
+        <input>
+            <condition>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <property>instrumentation/kns80/nav/to-flag</property>
+            </condition>
+            <property>instrumentation/kns80/nav/heading-deflection-deg</property>
+        </input>
+
+        <input>
+            <condition>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <property>instrumentation/kns80/nav/from-flag</property>
+            </condition>
+            <expression>
+                <product>
+                    <property>instrumentation/kns80/nav/heading-deflection-deg</property>
+                    <value>-1.0</value>
+                </product>
+            </expression>
+        </input>
+
+        <input>0.0</input>
+        <output>instrumentation/kns80/nav/heading-needle-deflection</output>
+        <period>
+            <min>-180.0</min>
+            <max>180.0</max>
+        </period>
+        <min>-10</min>
+        <max>10</max>
+    </filter>
+
+    <filter>
+        <name>needle-deflection-nm</name>
+        <debug>false</debug>
+        <type>gain</type>
+
+        <input>
+            <condition>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <property>instrumentation/kns80/nav/to-flag</property>
+            </condition>
+            <expression>
+                <product>
+                    <sin>
+                        <deg2rad><property>instrumentation/kns80/nav/heading-deflection-deg</property></deg2rad>
+                    </sin>
+                    <property>instrumentation/kns80/nav/nav-distance-nm</property>
+                </product>
+            </expression>
+        </input>
+
+        <input>
+            <condition>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <property>instrumentation/kns80/nav/from-flag</property>
+            </condition>
+            <expression>
+                <product>
+                    <sin>
+                        <deg2rad><property>instrumentation/kns80/nav/heading-deflection-deg</property></deg2rad>
+                    </sin>
+                    <property>instrumentation/kns80/nav/nav-distance-nm</property>
+                    <value>-1.0</value>
+                </product>
+            </expression>
+        </input>
+
+        <input>0.0</input>
+        <output>instrumentation/kns80/nav/heading-needle-deflection-nm</output>
+        <min>-5</min>
+        <max>5</max>
+    </filter>
+
+    <filter>
+        <name>needle-deflection-norm</name>
+        <debug>false</debug>
+        <type>gain</type>
+        <input>
+            <condition>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <equals>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>0</value>
+                </equals>
+                <not><property alias="../../../../../params/nav-loc"/></not>
+            </condition>
+            <expression>
+                <div>
+                    <property>instrumentation/kns80/nav/heading-needle-deflection</property>
+                    <value>10</value>
+                </div>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <equals>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>0</value>
+                </equals>
+                <property alias="../../../../params/nav-loc"/>
+            </condition>
+            <expression>
+                <div>
+                    <property>instrumentation/kns80/nav/heading-needle-deflection</property>
+                    <value>4</value>
+                </div>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <property>instrumentation/kns80/nav/in-range</property>
+                <equals>
+                    <property>instrumentation/kns80/nav-mode</property>
+                    <value>3</value>
+                </equals>
+            </condition>
+            <expression>
+                <div>
+                    <property>instrumentation/kns80/nav/heading-needle-deflection-nm</property>
+                    <value>1.25</value>
+                </div>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <property>instrumentation/kns80/nav/in-range</property>
+            </condition>
+            <expression>
+                <div>
+                    <property>instrumentation/kns80/nav/heading-needle-deflection-nm</property>
+                    <value>5</value>
+                </div>
+            </expression>
+        </input>
+        <input>0.0</input>
+        <output>instrumentation/kns80/nav/heading-needle-deflection-norm</output>
+        <min>-1</min>
+        <max>1</max>
+    </filter>
+
 </PropertyList>

@@ -307,6 +307,7 @@ var KA51 = {
 # The KI525 HSI Indicator
 var KI525 = {
   new : func( baseNode, name = "ki525", num = 0 ) {
+  
     var obj = {};
     obj.parents = [KI525];
 
@@ -370,6 +371,7 @@ var KI525 = {
 
 var KCS55 = {
   new : func(name = "kcs55", num = 0) {
+
     var obj = {};
     obj.parents = [KCS55];
 
