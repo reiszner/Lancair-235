@@ -52,7 +52,8 @@
   <model>
     <path>Instruments/kns80/kns80.xml</path>
     <offsets>
-      <x-m> 0.000129 </x-m>
+      <!--x-m> 0.000129 </x-m-->
+      <x-m> -0.01189 </x-m>
       <y-m> 0.000000 </y-m>
       <z-m> 0.046750 </z-m>
     </offsets>
