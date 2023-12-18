@@ -161,7 +161,8 @@ var KG102 = {
     obj.flagNode = obj.rootNode.initNode( "flag-norm", 0.0 );
 
     obj.lastTurn = 0.0;
-    obj.lastHeading = obj.trueHeadingNode.getValue();
+    ## ab 3D06 obj.lastHeading = obj.trueHeadingNode.getValue();
+    obj.lastHeading = obj.gyroHeadingNode.getValue();
     obj.offset = 0.0;
 
     var n = nil;
@@ -230,6 +231,7 @@ var KG102 = {
       turn = getLowPass( me.lastTurn, turn, 100*dt*spin*spin);
       me.lastTurn = turn;
       me.lastHeading = heading;
+      
 
       # get the current heading of the gyro, apply the filtered turn
       heading = me.gyroHeadingNode.getValue();
@@ -307,7 +309,6 @@ var KA51 = {
 # The KI525 HSI Indicator
 var KI525 = {
   new : func( baseNode, name = "ki525", num = 0 ) {
-  
     var obj = {};
     obj.parents = [KI525];
 

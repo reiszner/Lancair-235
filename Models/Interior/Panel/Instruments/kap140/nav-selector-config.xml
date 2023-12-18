@@ -32,7 +32,7 @@
         <source2-gs-in-range>instrumentation/nav[1]/gs-in-range</source2-gs-in-range>
         <source2-gs-rate-of-climb>instrumentation/nav[1]/gs-rate-of-climb</source2-gs-rate-of-climb>
         <source2-gs-rate-of-climb-fpm>instrumentation/nav[1]/gs-rate-of-climb-fpm</source2-gs-rate-of-climb-fpm>
-        <source2-heading-needle-deflection>instrumentation/kns80/nav/heading-deflection-deg</source2-heading-needle-deflection>
+        <source2-heading-needle-deflection>instrumentation/kns80/nav/heading-needle-deflection</source2-heading-needle-deflection>
         <source2-heading-needle-deflection-norm>instrumentation/nav[1]/heading-needle-deflection-norm</source2-heading-needle-deflection-norm>
         <source2-gs-needle-deflection>instrumentation/nav[1]/gs-needle-deflection</source2-gs-needle-deflection>
         <source2-gs-needle-deflection-norm>instrumentation/nav[1]/gs-needle-deflection-norm</source2-gs-needle-deflection-norm>
