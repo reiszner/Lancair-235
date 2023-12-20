@@ -31,7 +31,7 @@
     <ident                            type="bool">false</ident>
     <volume                           type="double">1.0</volume>
     <frequencies>
-      <source                         type="string">/instrumentation/dme[0]/frequencies/selected-mhz</source>
+      <source                         type="string">/instrumentation/nav[0]/frequencies/selected-mhz</source>
     </frequencies>
   </dme>
 
