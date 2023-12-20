@@ -121,9 +121,9 @@
     <type>rotate</type>
     <object-name>CompassRose</object-name>
     <property alias="../../params/indicated-heading"/>
-    <factor> 1 </factor>
+    <factor> -1 </factor>
     <axis>
-      <x> 1 </x>
+      <x> -1 </x>
       <y> 0 </y>
       <z> 0 </z>
     </axis>
@@ -144,7 +144,7 @@
   <animation>
     <type>rotate</type>
     <object-name>HDGBug</object-name>
-    <property alias="../../params/selected-heading"/>
+    <property alias="../../params/heading-bug"/>
     <factor> -1 </factor>
     <axis>
       <x> 1 </x>
