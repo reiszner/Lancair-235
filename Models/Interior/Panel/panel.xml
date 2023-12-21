@@ -177,7 +177,7 @@
     </offsets>
   </model>
 
-  <!-- GPS Console  ( disabled: White Sheet ) 
+  <!-- GPS Console  ( disabled: White Sheet ) -->  
   <model>
     <path>Instruments/zkv500/ZKV500.xml</path>
     <offsets>
@@ -189,7 +189,7 @@
       <heading-deg> 20 </heading-deg>
     </offsets>
   </model>
--->  
+
 
   <!-- Magnetos -->
   <model>

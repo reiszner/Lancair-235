@@ -152,9 +152,9 @@
     <kap140>
       <file>Aircraft/Lancair-235/Nasal/kap140.nas</file>
     </kap140>
-    <!--zkv500-->
-      <!--file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/zkv500/ZKV500.nas</file-->
-    <!--/zkv500-->
+    <zkv500>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/zkv500/ZKV500.nas</file>
+    </zkv500>
   </nasal>
 
 </PropertyList>
