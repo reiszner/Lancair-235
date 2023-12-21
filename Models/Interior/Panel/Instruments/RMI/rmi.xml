@@ -84,7 +84,7 @@
     <object-name>V1on</object-name>
     <object-name>brgN1</object-name>
     <condition>
-      <property>controls/armament/station[5]/release-all</property>
+      <property>instrumentation/rmi/select-source/brgN1</property>
     </condition>
   </animation>
 
@@ -93,7 +93,7 @@
     <object-name>V2on</object-name>
     <object-name>brgN2</object-name>
     <condition>
-      <property>controls/armament/station[6]/release-all</property>
+      <property>instrumentation/rmi/select-source/brgN2</property>
     </condition>
   </animation>
 
@@ -102,7 +102,7 @@
     <object-name>TACon</object-name>
     <object-name>brgTAC</object-name>
     <condition>
-      <property>controls/armament/station[7]/release-all</property>
+      <property>instrumentation/rmi/select-source/brgTAC</property>
     </condition>
   </animation>
 
@@ -164,7 +164,7 @@
   <animation>
     <type>rotate</type>
     <object-name>brgN2</object-name>
-    <property>instrumentation/nav[1]/heading-deg</property>
+    <property>instrumentation/kns80/nav/nav-distance-nm</property>
     <axis>
       <x> -1 </x>
       <y>  0 </y>
@@ -267,19 +267,19 @@
       <binding>
         <command>property-assign</command>
         <!-- NAV1 on-->
-        <property>controls/armament/station[5]/release-all</property>
+        <property>instrumentation/rmi/select-source/brgN1</property>
         <value type="bool">true</value>
       </binding>
       <binding>
         <command>property-assign</command>
         <!-- NAV2 off-->
-        <property>controls/armament/station[6]/release-all</property>
+        <property>instrumentation/rmi/select-source/brgN2</property>
         <value type="bool">false</value>value
       </binding>
       <binding>
         <command>property-assign</command>
         <!-- TACAN off-->
-        <property>controls/armament/station[7]/release-all</property>
+        <property>instrumentation/rmi/select-source/brgTAC</property>
         <value type="bool">false</value>
       </binding>
     </action>
@@ -294,19 +294,19 @@
       <binding>
         <command>property-assign</command>
         <!-- NAV1 off -->
-        <property>controls/armament/station[5]/release-all</property>
+        <property>instrumentation/rmi/select-source/brgN1</property>
         <value type="bool">false</value>
       </binding>
       <binding>
         <command>property-assign</command>
         <!-- NAV2 on-->
-        <property>controls/armament/station[6]/release-all</property>
+        <property>instrumentation/rmi/select-source/brgN2</property>
         <value type="bool">true</value>
       </binding>
       <binding>
         <command>property-assign</command>
         <!-- TACAN off-->
-        <property>controls/armament/station[7]/release-all</property>
+        <property>instrumentation/rmi/select-source/brgTAC</property>
         <value type="bool">false</value>
       </binding>
     </action>
@@ -321,19 +321,19 @@
       <binding>
         <command>property-assign</command>
         <!-- NAV1 off -->
-        <property>controls/armament/station[5]/release-all</property>
+        <property>instrumentation/rmi/select-source/brgN1</property>
         <value type="bool">false</value>
       </binding>
       <binding>
         <command>property-assign</command>
         <!-- NAV2 off-->
-        <property>controls/armament/station[6]/release-all</property>
+        <property>instrumentation/rmi/select-source/brgN2</property>
         <value type="bool">false</value>
       </binding>
       <binding>
         <command>property-assign</command>
         <!-- TACAN on -->
-        <property>controls/armament/station[7]/release-all</property>
+        <property>instrumentation/rmi/select-source/brgTAC</property>
         <value type="bool">true</value>
       </binding>
     </action>

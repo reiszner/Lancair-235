@@ -212,7 +212,7 @@
     </offsets>
   </model>
 
-  <!-- RMI Radio Mag Indi NAV1/NAV2/TAC-->
+  <!--  Radio Mag Indi NAV1/NAV2/TAC-->
   <model>
     <path>Instruments/RMI/rmi.xml</path>
     <offsets>

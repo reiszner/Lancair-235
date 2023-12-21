@@ -16,7 +16,7 @@
     <nav-loc>instrumentation/nav[1]/nav-loc</nav-loc>
     <nav-from-flag>instrumentation/nav[1]/from-flag</nav-from-flag>
     <nav-to-flag>instrumentation/nav[1]/to-flag</nav-to-flag>
-    <nav-heading-deg>instrumentation/nav[1]/heading-deg</nav-heading-deg>
+    <nav-heading-deg>instrumentation/kns80/nav/heading-deg</nav-heading-deg>
     <nav-frequency>instrumentation/nav[1]/frequencies/selected-mhz</nav-frequency>
     <nav-target-radial-deg>instrumentation/nav[1]/radials/target-radial-deg</nav-target-radial-deg>
     <nav-actual-deg>instrumentation/nav[1]/radials/actual-deg</nav-actual-deg>
