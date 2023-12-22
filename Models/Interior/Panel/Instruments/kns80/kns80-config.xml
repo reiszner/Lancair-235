@@ -5,28 +5,35 @@
 <PropertyList>
 
   <params>
+
+  <!--  Input To KNS80   -->
     <power-nominal>instrumentation/kns80/config/power-nominal</power-nominal>
     <power-supplied>systems/electrical/outputs/kns80</power-supplied>
-
-    <nav-power-btn>instrumentation/nav[1]/power-btn</nav-power-btn>
-    <nav-audio-btn>instrumentation/nav[1]/audio-btn</nav-audio-btn>
-    <nav-ident>instrumentation/nav[1]/ident</nav-ident>
+    <nav-audio-btn>instrumentation/nav[1]/audio-btn</nav-audio-btn>     <!-- From KX165-2 to Nav[1]  -->
     <nav-volume>instrumentation/nav[1]/volume</nav-volume>
     <nav-in-range>instrumentation/nav[1]/in-range</nav-in-range>
     <nav-loc>instrumentation/nav[1]/nav-loc</nav-loc>
     <nav-from-flag>instrumentation/nav[1]/from-flag</nav-from-flag>
     <nav-to-flag>instrumentation/nav[1]/to-flag</nav-to-flag>
-    <nav-heading-deg>instrumentation/kns80/nav/heading-deg</nav-heading-deg>
-    <nav-frequency>instrumentation/nav[1]/frequencies/selected-mhz</nav-frequency>
+    <nav-heading-deg>instrumentation/nav[1]/heading-deg</nav-heading-deg>
     <nav-target-radial-deg>instrumentation/nav[1]/radials/target-radial-deg</nav-target-radial-deg>
     <nav-actual-deg>instrumentation/nav[1]/radials/actual-deg</nav-actual-deg>
     <nav-selected-deg>instrumentation/nav[1]/radials/selected-deg</nav-selected-deg>
-
-    <dme-power-btn>instrumentation/dme[1]/power-btn</dme-power-btn>
     <dme-in-range>instrumentation/dme[1]/in-range</dme-in-range>
     <dme-indicated-distance-nm>instrumentation/dme[1]/indicated-distance-nm</dme-indicated-distance-nm>
-    <dme-source>instrumentation/dme[1]/frequencies/source</dme-source>
+    
+  <!--  Out From KNS80   -->
+    <nav-ident>instrumentation/nav[1]/ident</nav-ident>
+    <dme-power-btn>instrumentation/dme[1]/power-btn</dme-power-btn>
+
+  <!--  In+Out   KNS80   -->
+    <nav-power-btn>instrumentation/nav[1]/power-btn</nav-power-btn>
+    <nav-frequency>instrumentation/nav[1]/frequencies/selected-mhz</nav-frequency>
     <dme-frequency>instrumentation/dme[1]/frequencies/selected-mhz</dme-frequency>
+
+  <!--  Unused   KNS80   -->
+    <dme-source>instrumentation/dme[1]/frequencies/source</dme-source>
+
   </params>
 
 </PropertyList>
