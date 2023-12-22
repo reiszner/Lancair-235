@@ -1674,9 +1674,20 @@
   </effect-->
 
   <effect>
-    <inherits-from>Aircraft/PA28/Models/Effects/Glass/instrument_glass</inherits-from>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>glass</object-name>
     <object-name>base-sensor</object-name>
   </effect>
+  
+  <animation>
+    <type>select</type>
+    <condition>
+      <less-than>
+        <value alias="/params/model"/>
+        <value>0</value>
+      </less-than>
+    </condition>
+    <object-name>glass</object-name>
+  </animation>
 
 </PropertyList>
