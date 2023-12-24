@@ -30,7 +30,7 @@
     default altitude:
       if KAP140 (model 3) is powered up, the altitude preselect will be set to this value
   -->
-    <default-altitude type="int">4500</default-altitude>
+    <default-altitude type="int">2000</default-altitude>
 
   <!--
     barometer setting:
@@ -39,10 +39,16 @@
       if used altimeter is a instrument in cockpit, set 'baro-tied' to 1
       otherwise set 'baro-tied' to 0
   -->
+    <!--  c182s settings   -->
+    <!--baro-tied>autopilot/kap140/config/baro-tied</baro-tied-->
+    <!--baro-inhg>instrumentation/altimeter-kap140-internal/setting-inhg</baro-inhg-->
+    <!--baro-hpa>instrumentation/altimeter-kap140-internal/setting-hpa</baro-hpa-->
+    <!--indicated-altitude-ft>instrumentation/altimeter-kap140-internal/indicated-altitude-ft</indicated-altitude-ft-->
     <baro-tied>autopilot/kap140/config/baro-tied</baro-tied>
-    <baro-inhg>instrumentation/altimeter[1]/setting-inhg</baro-inhg>
-    <baro-hpa>instrumentation/altimeter[1]/setting-hpa</baro-hpa>
-    <indicated-altitude-ft>instrumentation/altimeter[1]/indicated-altitude-ft</indicated-altitude-ft>
+    <baro-inhg>instrumentation/altimeter[0]/setting-inhg</baro-inhg>
+    <baro-hpa>instrumentation/altimeter[0]/setting-hpa</baro-hpa>
+    <indicated-altitude-ft>instrumentation/altimeter[0]/indicated-altitude-ft</indicated-altitude-ft>
+
 
   <!--
     pressure source:
