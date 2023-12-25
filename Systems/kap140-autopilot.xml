@@ -406,7 +406,9 @@
 		<output>/autopilot/internal/aileron-pid</output>
 		<config>
 			<Kp>-0.08</Kp>
-			<Ti>3.5</Ti>
+      <!-- L235 Increase response to stop overshoot -->
+			<!--Ti>3.5</Ti-->
+			<Ti>1.6</Ti>
 			<Td>0.15</Td>
 			<u_min>-0.25</u_min>
 			<u_max>0.25</u_max>
@@ -433,7 +435,7 @@
 		</input>
 		<output>/controls/flight/aileron</output>
 		<!--max-rate-of-change>0.085</max-rate-of-change-->
-		<max-rate-of-change>0.200</max-rate-of-change>
+		<max-rate-of-change>0.500</max-rate-of-change>
 	</filter>
 	
 	<filter>
