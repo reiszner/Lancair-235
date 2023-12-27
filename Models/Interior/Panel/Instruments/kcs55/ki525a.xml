@@ -320,10 +320,10 @@
     <object-name>NAV</object-name>
     <property alias="../../params/nav-flag"/>
     <interpolation>
-      <entry><ind> 0.0 </ind><dep> 60 </dep></entry>
-      <entry><ind> 0.5 </ind><dep> 30 </dep></entry>
-      <entry><ind> 0.9 </ind><dep> 10 </dep></entry>
-      <entry><ind> 1.0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.5 </ind><dep> 10 </dep></entry>
+      <entry><ind> 0.9 </ind><dep> 30 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 60 </dep></entry>
     </interpolation>
     <center>
       <x-m> -0.00204 </x-m>

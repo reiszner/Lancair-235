@@ -455,14 +455,14 @@ setlistener("/instrumentation/nav-source/selector", func(tNode) {
     gs_defl_srce_node   = "/instrumentation/kns80/nav/glideslope-deflection-norm";
     to_flag_srce_node   = "/instrumentation/kns80/nav/to-flag";
     from_flag_srce_node = "/instrumentation/kns80/nav/from-flag";
-    nav_flag_srce_node  = "/instrumentation/kns80/nav/nav-flag";
+    nav_flag_srce_node  = "/instrumentation/kns80/nav/in-range";
   } else {
     sele_crse_srce_node = "/instrumentation/nav[0]/radials/selected-deg";
     cdi_defl_srce_node  = "/instrumentation/nav[0]/heading-needle-deflection-norm";
     gs_defl_srce_node   = "/instrumentation/nav[0]/gs-needle-deflection-norm";
     to_flag_srce_node   = "/instrumentation/nav[0]/to-flag";
     from_flag_srce_node = "/instrumentation/nav[0]/from-flag";
-    nav_flag_srce_node  = "/instrumentation/nav[0]/data-is-valid";
+    nav_flag_srce_node  = "/instrumentation/nav[0]/in-range";
   }
   # Write props for new alii according to selected nav step
   sele_crse_pntr.setValue(sele_crse_srce_node);

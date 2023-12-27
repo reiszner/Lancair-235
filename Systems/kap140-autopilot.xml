@@ -434,6 +434,7 @@
 			</expression>
 		</input>
 		<output>/controls/flight/aileron</output>
+    <!-- L235 Increase response to stop overshoot -->
 		<!--max-rate-of-change>0.085</max-rate-of-change-->
 		<max-rate-of-change>0.500</max-rate-of-change>
 	</filter>
