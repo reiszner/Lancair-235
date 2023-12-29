@@ -30,7 +30,7 @@
     default altitude:
       if KAP140 (model 3) is powered up, the altitude preselect will be set to this value
   -->
-    <default-altitude type="int">1500</default-altitude>
+    <default-altitude type="int">4500</default-altitude>
 
   <!--
     barometer setting:
