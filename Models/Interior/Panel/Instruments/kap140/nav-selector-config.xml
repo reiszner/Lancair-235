@@ -33,9 +33,9 @@
         <source2-gs-rate-of-climb>instrumentation/nav[1]/gs-rate-of-climb</source2-gs-rate-of-climb>
         <source2-gs-rate-of-climb-fpm>instrumentation/nav[1]/gs-rate-of-climb-fpm</source2-gs-rate-of-climb-fpm>
         <source2-heading-needle-deflection>instrumentation/kns80/nav/heading-needle-deflection</source2-heading-needle-deflection>
-        <source2-heading-needle-deflection-norm>instrumentation/nav[1]/heading-needle-deflection-norm</source2-heading-needle-deflection-norm>
-        <source2-gs-needle-deflection>instrumentation/nav[1]/gs-needle-deflection</source2-gs-needle-deflection>
-        <source2-gs-needle-deflection-norm>instrumentation/nav[1]/gs-needle-deflection-norm</source2-gs-needle-deflection-norm>
+        <source2-heading-needle-deflection-norm>instrumentation/kns80/nav/heading-needle-deflection-norm</source2-heading-needle-deflection-norm>
+        <source2-gs-needle-deflection>instrumentation/kns80/nav/glideslope-deflection</source2-gs-needle-deflection>
+        <source2-gs-needle-deflection-norm>instrumentation/kns80/nav/glideslope-deflection-norm</source2-gs-needle-deflection-norm>
         <source2-selected-radial-deg>instrumentation/nav[1]/radials/selected-deg</source2-selected-radial-deg>
         <source2-target-radial-deg>instrumentation/nav[1]/radials/target-radial-deg</source2-target-radial-deg>
 
