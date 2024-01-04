@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- KI-229 RMI -->
+<PropertyList>
+
+  <path>seleSrce.ac</path>
+
+  <animation>
+    <object-name>RMI</object-name>
+    <object-name>face</object-name>
+    <object-name>ticks</object-name>
+    <object-name>knob</object-name>
+    <object-name>bug</object-name>
+    <object-name>adf</object-name>
+    <object-name>brgGPS</object-name>
+    <object-name>brgN2</object-name>
+    <object-name>brgN1</object-name>
+    <object-name>switchbox</object-name>
+    <object-name>NAV1BUTT</object-name>
+    <object-name>NAV2BUTT</object-name>
+    <object-name>GPSBUTT</object-name>
+    <object-name>V1on</object-name>
+    <object-name>V2on</object-name>
+    <object-name>GPSon</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>RMI</object-name>
+    <object-name>face</object-name>
+    <object-name>ticks</object-name>
+    <object-name>knob</object-name>
+    <object-name>bug</object-name>
+    <object-name>adf</object-name>
+    <object-name>brgGPS</object-name>
+    <object-name>brgN2</object-name>
+    <object-name>brgN1</object-name>
+    <object-name>switchbox</object-name>
+    <object-name>NAV1BUTT</object-name>
+    <object-name>NAV2BUTT</object-name>
+    <object-name>GPSBUTT</object-name>
+    <object-name>V1on</object-name>
+    <object-name>V2on</object-name>
+    <object-name>GPSon</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
+  <effect>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>ticks</object-name>
+    <object-name>adf</object-name>
+    <object-name>brgN1</object-name>
+    <object-name>brgN2</object-name>
+    <object-name>brgGPS</object-name>
+    <object-name>bug</object-name>
+    <object-name>NAV1BUTT</object-name>
+    <object-name>NAV2BUTT</object-name>
+    <object-name>GPSBUTT</object-name>
+    <object-name>V1on</object-name>
+    <object-name>V2on</object-name>
+    <object-name>GPSon</object-name>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>V1on</object-name>
+    <object-name>brgN1</object-name>
+    <condition>
+      <property>instrumentation/rmi/select-source/brgN1</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>V2on</object-name>
+    <object-name>brgN2</object-name>
+    <condition>
+      <property>instrumentation/rmi/select-source/brgN2</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>GPSon</object-name>
+    <object-name>brgGPS</object-name>
+    <condition>
+      <property>instrumentation/rmi/select-source/brgGPS</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>face</object-name>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>adf</object-name>
+    <property>instrumentation/adf/indicated-bearing-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>brgN1</object-name>
+    <property>orientation/heading-deg</property>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>brgN1</object-name>
+    <property>instrumentation/nav[0]/heading-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>brgN2</object-name>
+    <property>orientation/heading-deg</property>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>brgN2</object-name>
+    <property>instrumentation/kns80/nav/nav-distance-nm</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>brgGPS</object-name>
+    <property>orientation/heading-deg</property>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>brgGPS</object-name>
+    <property>instrumentation/tacan/indicated-bearing-true-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Heading bug dial -->
+  <animation>
+    <type>rotate</type>
+    <object-name>bug</object-name>
+    <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+    <factor>-1</factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>bug</object-name>
+    <property>autopilot/settings/heading-bug-deg</property>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Heading Bug control -->
+  <animation>
+    <type>pick</type>
+    <object-name>knob</object-name>
+    <action>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>knob</object-name>
+    <action>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>autopilot/settings/heading-bug-deg</property>
+        <step>1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <!-- NAV1 Button connect the NAV gauge to Nav1
+  /controls/armament/station[5]/release-all = false/true
+  /controls/armament/station[6]/release-all = false/true
+  /controls/armament/station[7]/release-all = false/true
+  -->
+  <animation>
+    <type>pick</type>
+    <object-name>NAV1BUTT</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <!-- NAV1 on-->
+        <property>instrumentation/rmi/select-source/brgN1</property>
+        <value type="bool">true</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <!-- NAV2 off-->
+        <property>instrumentation/rmi/select-source/brgN2</property>
+        <value type="bool">false</value>value
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <!-- GPS off-->
+        <property>instrumentation/rmi/select-source/brgGPS</property>
+        <value type="bool">false</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>NAV2BUTT</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <!-- NAV1 off -->
+        <property>instrumentation/rmi/select-source/brgN1</property>
+        <value type="bool">false</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <!-- NAV2 on-->
+        <property>instrumentation/rmi/select-source/brgN2</property>
+        <value type="bool">true</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <!-- GPS off-->
+        <property>instrumentation/rmi/select-source/brgGPS</property>
+        <value type="bool">false</value>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>GPSBUTT</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <!-- NAV1 off -->
+        <property>instrumentation/rmi/select-source/brgN1</property>
+        <value type="bool">false</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <!-- NAV2 off-->
+        <property>instrumentation/rmi/select-source/brgN2</property>
+        <value type="bool">false</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <!-- GPS on -->
+        <property>instrumentation/rmi/select-source/brgGPS</property>
+        <value type="bool">true</value>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

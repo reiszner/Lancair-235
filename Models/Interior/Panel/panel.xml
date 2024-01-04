@@ -123,8 +123,9 @@
     <path>Instruments/kcs55/ka51b.xml</path>
     <offsets>
       <x-m> -0.022 </x-m>
-      <y-m> -0.161 </y-m>
-      <z-m> -0.102 </z-m>
+      <!--y-m> -0.161 </y-m-->
+      <y-m> -0.2875   </y-m>
+      <z-m> -0.103 </z-m>
     </offsets>
     <overlay>
       <animation n="100">
@@ -135,6 +136,16 @@
         <z-offset> 0.8 </z-offset>
       </animation>
     </overlay>
+  </model>
+
+  <!-- Nav Source Slector for HSI    -->
+  <model>
+    <path>Instruments/hsi-source/hsi-source.xml</path>
+    <offsets>
+      <x-m> -0.022 </x-m>
+      <y-m> -0.133 </y-m>
+      <z-m> -0.054 </z-m>
+    </offsets>
   </model>
 
   <!-- asi -->
