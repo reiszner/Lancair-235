@@ -14,7 +14,15 @@ is assumed to be a typo).  There is only one Course Devitation Indicator, it is 
 radio, KNS80 RNAV and 'GPS' by setting the property: /instrumentation/nav-source/selector to 0, 1, 2.
 With nav-source/selector set to 1 the CDI will respond to either KNS80 VOR or RNAV waypoint according
 to KNS80 Nav Mode setting.  There are no push-buttons on the panel for KI525 nav source selection. 
-GPS mode for the KCS55 has not been tested. 
+GPS mode for the KCS55 has not been tested.
+
+nav-source-panel
+  This instrument is a three-way radio push-button to set nav-source index for HSI and autopilot.
+It's based on the RMI instrument from Helijah's Lancair-235 with the'TAC' label replaced with 'GPS'
+for nav-source index value 2; this is the only change to the png image so the image file shows the 
+full RMI face and pointers.  The .xml and .ac file are chopped so that only the pushbutton switches
+are displayed. 
+ 
   
   
 
