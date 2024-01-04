@@ -3,7 +3,7 @@
 <!-- KI-229 RMI -->
 <PropertyList>
 
-  <path>nav-source-panel.ac</path>
+  <path>nav-srce-pbs.ac</path>
 
   <animation>
     <object-name>switchbox</object-name>
@@ -94,7 +94,7 @@
         <command>property-assign</command>
         <!-- NAV1 Selected-->
         <property>instrumentation/nav-source/selector</property>
-        <value type="bool">0</value>
+        <value type="int">0</value>
       </binding>
     </action>
   </animation>
@@ -109,7 +109,7 @@
         <command>property-assign</command>
         <!-- NAV2 Selected -->
         <property>instrumentation/nav-source/selector</property>
-        <value type="bool">1</value>
+        <value type="int">1</value>
       </binding>
     </action>
   </animation>
@@ -124,7 +124,7 @@
         <command>property-assign</command>
         <!-- GPS Selected -->
         <property>instrumentation/nav-source/selector</property>
-        <value type="bool">2</value>
+        <value type="int">2</value>
       </binding>
     </action>
   </animation>

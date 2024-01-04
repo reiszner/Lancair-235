@@ -1,4 +1,5 @@
-nav-source-panel
+nav-srce-pbs
+
 
   This instrument is a three-way radio push-button to set nav-source index for HSI and autopilot.
 It's based on the RMI instrument from Helijah's Lancair-235 with the'TAC' label replaced with 'GPS'
