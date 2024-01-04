@@ -3,15 +3,15 @@
 <!-- KI-229 RMI -->
 <PropertyList>
 
-  <path>hsi-source.ac</path>
+  <path>nav-source-panel.ac</path>
 
   <animation>
     <object-name>switchbox</object-name>
     <object-name>NAV1BUTT</object-name>
     <object-name>NAV2BUTT</object-name>
     <object-name>GPSBUTT</object-name>
-    <object-name>V1on</object-name>
-    <object-name>V2on</object-name>
+    <object-name>NAV1on</object-name>
+    <object-name>NAV2on</object-name>
     <object-name>GPSon</object-name>
   </animation>
 
@@ -55,7 +55,10 @@
     <type>select</type>
     <object-name>NAV1on</object-name>
     <condition>
-      <property>instrumentation/hsi-source/NAV1</property>
+      <equals>
+        <property>instrumentation/nav-source/selector</property>
+        <value>0</value>
+      </equals>
     </condition>
   </animation>
 
@@ -63,7 +66,10 @@
     <type>select</type>
     <object-name>NAV2on</object-name>
     <condition>
-      <property>instrumentation/hsi-source/NAV2</property>
+      <equals>
+        <property>instrumentation/nav-source/selector</property>
+        <value>1</value>
+      </equals>
     </condition>
   </animation>
 
@@ -71,7 +77,10 @@
     <type>select</type>
     <object-name>GPSon</object-name>
     <condition>
-      <property>instrumentation/hsi-source/GPS</property>
+      <equals>
+        <property>instrumentation/nav-source/selector</property>
+        <value>2</value>
+      </equals>
     </condition>
   </animation>
 
@@ -83,21 +92,9 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <!-- NAV1 on-->
-        <property>instrumentation/hsi-source/NAV1</property>
-        <value type="bool">true</value>
-      </binding>
-      <binding>
-        <command>property-assign</command>
-        <!-- NAV2 off-->
-        <property>instrumentation/hsi-source/NAV2</property>
-        <value type="bool">false</value>value
-      </binding>
-      <binding>
-        <command>property-assign</command>
-        <!-- GPS off-->
-        <property>instrumentation/hsi-source/GPS</property>
-        <value type="bool">false</value>
+        <!-- NAV1 Selected-->
+        <property>instrumentation/nav-source/selector</property>
+        <value type="bool">0</value>
       </binding>
     </action>
   </animation>
@@ -110,21 +107,9 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <!-- NAV1 off -->
-        <property>instrumentation/hsi-source/NAV1</property>
-        <value type="bool">false</value>
-      </binding>
-      <binding>
-        <command>property-assign</command>
-        <!-- NAV2 on-->
-        <property>instrumentation/hsi-source/NAV2</property>
-        <value type="bool">true</value>
-      </binding>
-      <binding>
-        <command>property-assign</command>
-        <!-- GPS off-->
-        <property>instrumentation/hsi-source/GPS</property>
-        <value type="bool">false</value>
+        <!-- NAV2 Selected -->
+        <property>instrumentation/nav-source/selector</property>
+        <value type="bool">1</value>
       </binding>
     </action>
   </animation>
@@ -137,21 +122,9 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <!-- NAV1 off -->
-        <property>instrumentation/hsi-source/NAV1</property>
-        <value type="bool">false</value>
-      </binding>
-      <binding>
-        <command>property-assign</command>
-        <!-- NAV2 off-->
-        <property>instrumentation/hsi-source/NAV2</property>
-        <value type="bool">false</value>
-      </binding>
-      <binding>
-        <command>property-assign</command>
-        <!-- GPS on -->
-        <property>instrumentation/hsi-source/GPS</property>
-        <value type="bool">true</value>
+        <!-- GPS Selected -->
+        <property>instrumentation/nav-source/selector</property>
+        <value type="bool">2</value>
       </binding>
     </action>
   </animation>

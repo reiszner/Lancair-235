@@ -140,7 +140,7 @@
 
   <!-- Nav Source Slector for HSI    -->
   <model>
-    <path>Instruments/hsi-source/hsi-source.xml</path>
+    <path>Instruments/nav-source-panel/nav-source-panel.xml</path>
     <offsets>
       <x-m> -0.022 </x-m>
       <y-m> -0.133 </y-m>
