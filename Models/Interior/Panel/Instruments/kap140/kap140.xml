@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!-- ______________________________________________________________________________
      KAP140 Two Axis with Altitude Preselect autopilot instrument.
@@ -18,12 +18,138 @@
 
 <PropertyList include="kap140-config.xml">
 
-  <name>KAP140TwoAxisAlt</name>
   <path>kap140.ac</path>
 
-  <defaults>
-    <axis-animation-vertex-order-xyz/>
-  </defaults>
+  <animation>
+    <object-name>base</object-name>
+    <object-name>base-frame</object-name>
+    <object-name>base-frame-inner</object-name>
+    <object-name>display</object-name>
+    <object-name>display-frame</object-name>
+    <object-name>ann-test</object-name>
+    <object-name>btn-ap</object-name>
+    <object-name>btn-hdg</object-name>
+    <object-name>btn-nav</object-name>
+    <object-name>btn-apr</object-name>
+    <object-name>btn-rev</object-name>
+    <object-name>btn-alt</object-name>
+    <object-name>btn-down</object-name>
+    <object-name>btn-up</object-name>
+    <object-name>btn-arm</object-name>
+    <object-name>btn-baro</object-name>
+    <object-name>knob-outer</object-name>
+    <object-name>knob-inner</object-name>
+    <object-name>ann-mode1-rev</object-name>
+    <object-name>ann-mode1-hdg</object-name>
+    <object-name>ann-mode1-apr</object-name>
+    <object-name>ann-mode1-ap</object-name>
+    <object-name>ann-mode1-rol</object-name>
+    <object-name>ann-mode1-nav</object-name>
+    <object-name>ann-mode2-vs</object-name>
+    <object-name>ann-mode2-fail</object-name>
+    <object-name>ann-mode2-pft</object-name>
+    <object-name>ann-mode2-gs</object-name>
+    <object-name>ann-mode2-alt</object-name>
+    <object-name>ann-arm1</object-name>
+    <object-name>ann-arm1-apr</object-name>
+    <object-name>ann-arm1-gs</object-name>
+    <object-name>ann-arm1-rev</object-name>
+    <object-name>ann-arm1-nav</object-name>
+    <object-name>ann-arm2-alt</object-name>
+    <object-name>ann-arm2</object-name>
+    <object-name>ann-decimal</object-name>
+    <object-name>ann-digit-minus</object-name>
+    <object-name>ann-digit1</object-name>
+    <object-name>ann-digit2</object-name>
+    <object-name>ann-digit3</object-name>
+    <object-name>ann-digit4</object-name>
+    <object-name>ann-digit5</object-name>
+    <object-name>ann-pt-up</object-name>
+    <object-name>ann-pt</object-name>
+    <object-name>ann-pt-down</object-name>
+    <object-name>ann-ap-on</object-name>
+    <object-name>ann-ap-act</object-name>
+    <object-name>ann-yd</object-name>
+    <object-name>ann-alt-alert</object-name>
+    <object-name>ann-hpa</object-name>
+    <object-name>ann-fpm</object-name>
+    <object-name>ann-ft</object-name>
+    <object-name>ann-inhg</object-name>
+
+    <object-name>glass</object-name>
+    <object-name>base-sensor</object-name>
+    <object-name>ann-fail-pitch</object-name>
+    <object-name>ann-fail-roll</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>base</object-name>
+    <object-name>base-frame</object-name>
+    <object-name>base-frame-inner</object-name>
+    <object-name>display</object-name>
+    <object-name>display-frame</object-name>
+    <object-name>ann-test</object-name>
+    <object-name>btn-ap</object-name>
+    <object-name>btn-hdg</object-name>
+    <object-name>btn-nav</object-name>
+    <object-name>btn-apr</object-name>
+    <object-name>btn-rev</object-name>
+    <object-name>btn-alt</object-name>
+    <object-name>btn-down</object-name>
+    <object-name>btn-up</object-name>
+    <object-name>btn-arm</object-name>
+    <object-name>btn-baro</object-name>
+    <object-name>knob-outer</object-name>
+    <object-name>knob-inner</object-name>
+    <object-name>ann-mode1-rev</object-name>
+    <object-name>ann-mode1-hdg</object-name>
+    <object-name>ann-mode1-apr</object-name>
+    <object-name>ann-mode1-ap</object-name>
+    <object-name>ann-mode1-rol</object-name>
+    <object-name>ann-mode1-nav</object-name>
+    <object-name>ann-mode2-vs</object-name>
+    <object-name>ann-mode2-fail</object-name>
+    <object-name>ann-mode2-pft</object-name>
+    <object-name>ann-mode2-gs</object-name>
+    <object-name>ann-mode2-alt</object-name>
+    <object-name>ann-arm1</object-name>
+    <object-name>ann-arm1-apr</object-name>
+    <object-name>ann-arm1-gs</object-name>
+    <object-name>ann-arm1-rev</object-name>
+    <object-name>ann-arm1-nav</object-name>
+    <object-name>ann-arm2-alt</object-name>
+    <object-name>ann-arm2</object-name>
+    <object-name>ann-decimal</object-name>
+    <object-name>ann-digit-minus</object-name>
+    <object-name>ann-digit1</object-name>
+    <object-name>ann-digit2</object-name>
+    <object-name>ann-digit3</object-name>
+    <object-name>ann-digit4</object-name>
+    <object-name>ann-digit5</object-name>
+    <object-name>ann-pt-up</object-name>
+    <object-name>ann-pt</object-name>
+    <object-name>ann-pt-down</object-name>
+    <object-name>ann-ap-on</object-name>
+    <object-name>ann-ap-act</object-name>
+    <object-name>ann-yd</object-name>
+    <object-name>ann-alt-alert</object-name>
+    <object-name>ann-hpa</object-name>
+    <object-name>ann-fpm</object-name>
+    <object-name>ann-ft</object-name>
+    <object-name>ann-inhg</object-name>
+    <object-name>glass</object-name>
+    <object-name>base-sensor</object-name>
+    <object-name>ann-fail-pitch</object-name>
+    <object-name>ann-fail-roll</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
+  <effect>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
+    <object-name>glass</object-name>
+    <object-name>base-sensor</object-name>
+  </effect>
 
   <animation>
     <name>annunciators</name>
@@ -92,116 +218,21 @@
     <object-name>btn-baro</object-name>
   </animation>
 
-
   <animation>
     <type>material</type>
-    <object-name>knob-outer</object-name>
-    <object-name>knob-inner</object-name>
-    <object-name>base</object-name>
+    <object-name>annunciators</object-name>
+    <object-name>ann-fail-pitch</object-name>
+    <object-name>ann-fail-roll</object-name>
+    <object-name>buttons</object-name>
+    <object-name>base-frame</object-name>
+    <object-name>display-frame</object-name>
     <emission>
-      <red>0.3</red>
-      <green>0.3</green>
-      <blue>0.3</blue>
-      <factor-prop>/systems/electrical/outputs/glareshield-lights-norm</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
     </emission>
-    <specular>
-        <red>   0.0 </red>
-        <green> 0.0 </green>
-        <blue>  0.0 </blue>
-    </specular>
-    <ambient>
-        <red>   1 </red>
-        <green> 1 </green>
-        <blue>  1 </blue>
-    </ambient>
-    <diffuse>
-        <red>   0.3 </red>
-        <green> 0.3 </green>
-        <blue>  0.3 </blue>
-    </diffuse>
-    <shininess>
-        <red>   0 </red>
-        <green> 0 </green>
-        <blue>  0 </blue>
-    </shininess>
   </animation>
-
-  <animation>
-        <type>material</type>
-        <object-name>buttons</object-name>
-        <condition>
-            <not>
-                <property>sim/rendering/rembrandt/enabled</property>
-            </not>
-            <greater-than>
-                <property>/systems/electrical/outputs/radio-lights-norm</property>
-                <value>0</value>
-            </greater-than>
-        </condition>
-        <emission>
-            <red>0.5</red>
-            <green>0.1</green>
-            <blue>0.00005</blue>
-            <factor-prop>/systems/electrical/outputs/radio-lights-norm</factor-prop>
-        </emission>
-        <specular>
-            <red>   0.0 </red>
-            <green> 0.0 </green>
-            <blue>  0.0 </blue>
-        </specular>
-        <ambient>
-            <red>   1 </red>
-            <green> 1 </green>
-            <blue>  1 </blue>
-        </ambient>
-        <diffuse>
-            <red>   0.3 </red>
-            <green> 0.3 </green>
-            <blue>  0.3 </blue>
-        </diffuse>
-        <shininess>
-            <red>   0 </red>
-            <green> 0 </green>
-            <blue>  0 </blue>
-        </shininess>
-    </animation>
-
-    <animation>
-        <type>material</type>
-        <object-name>buttons</object-name>
-        <condition>
-            <equals>
-                <property>/systems/electrical/outputs/radio-lights-norm</property>
-                <value>0</value>
-            </equals>
-        </condition>
-        <emission>
-            <red>0.3</red>
-            <green>0.3</green>
-            <blue>0.3</blue>
-            <factor-prop>/systems/electrical/outputs/glareshield-lights-norm</factor-prop>
-        </emission>
-        <specular>
-            <red>   0.0 </red>
-            <green> 0.0 </green>
-            <blue>  0.0 </blue>
-        </specular>
-        <ambient>
-            <red>   1 </red>
-            <green> 1 </green>
-            <blue>  1 </blue>
-        </ambient>
-        <diffuse>
-            <red>   0.3 </red>
-            <green> 0.3 </green>
-            <blue>  0.3 </blue>
-        </diffuse>
-        <shininess>
-            <red>   0 </red>
-            <green> 0 </green>
-            <blue>  0 </blue>
-        </shininess>
-    </animation>
 
   <animation>
     <type>select</type>
@@ -266,7 +297,6 @@
   </animation>
 
   <!-- Annunciators -->
-
   <animation>
     <type>select</type>
     <object-name>annunciators</object-name>
@@ -328,7 +358,6 @@
   </animation>
 
   <!-- activ annun -->
-
   <!-- digits -->
   <animation>
     <type>textranslate</type>
@@ -337,8 +366,8 @@
     <factor>0.00001</factor>
     <step>10000</step>
     <axis>
-      <x>1</x>
-      <y>0</y>
+      <x> 1 </x>
+      <y> 0 </y>
     </axis>
   </animation>
 
@@ -349,8 +378,8 @@
     <factor>0.0001</factor>
     <step>1000</step>
     <axis>
-      <x>1</x>
-      <y>0</y>
+      <x> 1 </x>
+      <y> 0 </y>
     </axis>
   </animation>
 
@@ -361,8 +390,8 @@
     <factor>0.001</factor>
     <step>100</step>
     <axis>
-      <x>1</x>
-      <y>0</y>
+      <x> 1 </x>
+      <y> 0 </y>
     </axis>
   </animation>
 
@@ -373,8 +402,8 @@
     <factor>0.01</factor>
     <step>10</step>
     <axis>
-      <x>1</x>
-      <y>0</y>
+      <x> 1 </x>
+      <y> 0 </y>
     </axis>
   </animation>
 
@@ -385,8 +414,8 @@
     <factor>0.1</factor>
     <step>1</step>
     <axis>
-      <x>1</x>
-      <y>0</y>
+      <x> 1 </x>
+      <y> 0 </y>
     </axis>
   </animation>
 
@@ -846,7 +875,6 @@
   </animation>
 
   <!-- arm1 -->
-
   <animation>
     <type>select</type>
     <object-name>ann-arm1</object-name>
@@ -1015,72 +1043,72 @@
     <object-name>ann-pt</object-name>
     <name>Pitch trim up annunciator</name>
     <condition>
-        <or>
-            <equals>
-                <property>autopilot/kap140/sensors/pitch-up</property>
-                <value>1</value>
-            </equals>
-            <and>
-                <greater-than>
+      <or>
+        <equals>
+          <property>autopilot/kap140/sensors/pitch-up</property>
+          <value>1</value>
+        </equals>
+        <and>
+          <greater-than>
+            <property>autopilot/kap140/sensors/pitch-up</property>
+            <value>1</value>
+          </greater-than>
+          <less-than>
+            <expression>
+              <mod>
+                <product>
+                  <dif>
+                    <property>sim/time/elapsed-sec</property>
                     <property>autopilot/kap140/sensors/pitch-up</property>
-                    <value>1</value>
-                </greater-than>
-                <less-than>
-                    <expression>
-                        <mod>
-                            <product>
-                                <dif>
-                                    <property>sim/time/elapsed-sec</property>
-                                    <property>autopilot/kap140/sensors/pitch-up</property>
-                                </dif>
-                            <value>2</value>
-                            </product>
-                            <value>2</value>
-                        </mod>
-                    </expression>
-                    <value>1</value>
-                </less-than>
-            </and>
-            <equals>
-                <property>autopilot/kap140/sensors/pitch-down</property>
-                <value>1</value>
-            </equals>
-            <and>
-                <greater-than>
+                  </dif>
+                  <value>2</value>
+                </product>
+                <value>2</value>
+              </mod>
+            </expression>
+            <value>1</value>
+          </less-than>
+        </and>
+        <equals>
+          <property>autopilot/kap140/sensors/pitch-down</property>
+          <value>1</value>
+        </equals>
+        <and>
+          <greater-than>
+            <property>autopilot/kap140/sensors/pitch-down</property>
+            <value>1</value>
+          </greater-than>
+          <less-than>
+            <expression>
+              <mod>
+                <product>
+                  <dif>
+                    <property>sim/time/elapsed-sec</property>
                     <property>autopilot/kap140/sensors/pitch-down</property>
-                    <value>1</value>
-                </greater-than>
-                <less-than>
-                    <expression>
-                        <mod>
-                            <product>
-                                <dif>
-                                    <property>sim/time/elapsed-sec</property>
-                                    <property>autopilot/kap140/sensors/pitch-down</property>
-                                </dif>
-                            <value>2</value>
-                            </product>
-                            <value>2</value>
-                        </mod>
-                    </expression>
-                    <value>1</value>
-                </less-than>
-            </and>
-            <and>
-                <equals>
-                    <property>autopilot/kap140/sensors/pitch-trim</property>
-                    <value>1</value>
-                </equals>
-                <equals>
-                    <property>autopilot/kap140/sensors/pitch-up</property>
-                    <value>0</value>
-                </equals>
-                <equals>
-                    <property>autopilot/kap140/sensors/pitch-down</property>
-                    <value>0</value>
-                </equals>
-            </and>
-        </or>
+                  </dif>
+                  <value>2</value>
+                </product>
+                <value>2</value>
+              </mod>
+            </expression>
+            <value>1</value>
+          </less-than>
+        </and>
+        <and>
+          <equals>
+            <property>autopilot/kap140/sensors/pitch-trim</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>autopilot/kap140/sensors/pitch-up</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>autopilot/kap140/sensors/pitch-down</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </or>
     </condition>
   </animation>
 
@@ -1089,33 +1117,33 @@
     <object-name>ann-pt-up</object-name>
     <name>Pitch trim up annunciator</name>
     <condition>
-        <or>
-            <equals>
-                <property>autopilot/kap140/sensors/pitch-up</property>
-                <value>1</value>
-            </equals>
-            <and>
-                <greater-than>
+      <or>
+        <equals>
+          <property>autopilot/kap140/sensors/pitch-up</property>
+          <value>1</value>
+        </equals>
+        <and>
+          <greater-than>
+            <property>autopilot/kap140/sensors/pitch-up</property>
+            <value>2</value>
+          </greater-than>
+          <less-than>
+            <expression>
+              <mod>
+                <product>
+                  <dif>
+                    <property>sim/time/elapsed-sec</property>
                     <property>autopilot/kap140/sensors/pitch-up</property>
-                    <value>2</value>
-                </greater-than>
-                <less-than>
-                    <expression>
-                        <mod>
-                            <product>
-                                <dif>
-                                    <property>sim/time/elapsed-sec</property>
-                                    <property>autopilot/kap140/sensors/pitch-up</property>
-                                </dif>
-                            <value>2</value>
-                            </product>
-                            <value>2</value>
-                        </mod>
-                    </expression>
-                    <value>1</value>
-                </less-than>
-            </and>
-        </or>
+                  </dif>
+                  <value>2</value>
+                </product>
+                <value>2</value>
+              </mod>
+            </expression>
+            <value>1</value>
+          </less-than>
+        </and>
+      </or>
     </condition>
   </animation>
 
@@ -1124,33 +1152,33 @@
     <object-name>ann-pt-down</object-name>
     <name>Pitch trim down annunciator</name>
     <condition>
-        <or>
-            <equals>
-                <property>autopilot/kap140/sensors/pitch-down</property>
-                <value>1</value>
-            </equals>
-            <and>
-                <greater-than>
+      <or>
+        <equals>
+          <property>autopilot/kap140/sensors/pitch-down</property>
+          <value>1</value>
+        </equals>
+        <and>
+          <greater-than>
+            <property>autopilot/kap140/sensors/pitch-down</property>
+            <value>2</value>
+          </greater-than>
+          <less-than>
+            <expression>
+              <mod>
+                <product>
+                  <dif>
+                    <property>sim/time/elapsed-sec</property>
                     <property>autopilot/kap140/sensors/pitch-down</property>
-                    <value>2</value>
-                </greater-than>
-                <less-than>
-                    <expression>
-                        <mod>
-                            <product>
-                                <dif>
-                                    <property>sim/time/elapsed-sec</property>
-                                    <property>autopilot/kap140/sensors/pitch-down</property>
-                                </dif>
-                            <value>2</value>
-                            </product>
-                            <value>2</value>
-                        </mod>
-                    </expression>
-                    <value>1</value>
-                </less-than>
-            </and>
-        </or>
+                  </dif>
+                  <value>2</value>
+                </product>
+                <value>2</value>
+              </mod>
+            </expression>
+            <value>1</value>
+          </less-than>
+        </and>
+      </or>
     </condition>
   </animation>
 
@@ -1309,7 +1337,6 @@
   </animation>
 
   <!-- Actions -->
-
   <animation>
     <type>pick</type>
     <object-name>btn-ap</object-name>
@@ -1433,7 +1460,6 @@
           <value>0</value>
         </binding>
       </mod-up>
-
     </action>
   </animation>
 
@@ -1549,9 +1575,16 @@
     <type>rotate</type>
     <object-name>knob-inner</object-name>
     <property>autopilot/kap140/panel/knob-inner-pos</property>
-    <factor>15</factor>
+    <factor> 15 </factor>
+    <center>
+      <x-m>  0.01500 </x-m>
+      <y-m>  0.06500 </y-m>
+      <z-m> -0.00600 </z-m>
+    </center>
     <axis>
-        <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1559,9 +1592,16 @@
     <type>rotate</type>
     <object-name>knob-outer</object-name>
     <property>autopilot/kap140/panel/knob-outer-pos</property>
-    <factor>10</factor>
+    <factor> 10 </factor>
+    <center>
+      <x-m>  0.01500 </x-m>
+      <y-m>  0.06500 </y-m>
+      <z-m> -0.00600 </z-m>
+    </center>
     <axis>
-        <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1569,9 +1609,11 @@
     <type>translate</type>
     <object-name>btn-ap</object-name>
     <property>autopilot/kap140/event/button-ap</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1579,9 +1621,11 @@
     <type>translate</type>
     <object-name>btn-hdg</object-name>
     <property>autopilot/kap140/event/button-hdg</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1589,9 +1633,11 @@
     <type>translate</type>
     <object-name>btn-nav</object-name>
     <property>autopilot/kap140/event/button-nav</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1599,9 +1645,11 @@
     <type>translate</type>
     <object-name>btn-apr</object-name>
     <property>autopilot/kap140/event/button-apr</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1609,9 +1657,11 @@
     <type>translate</type>
     <object-name>btn-rev</object-name>
     <property>autopilot/kap140/event/button-rev</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1619,9 +1669,11 @@
     <type>translate</type>
     <object-name>btn-alt</object-name>
     <property>autopilot/kap140/event/button-alt</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1629,9 +1681,11 @@
     <type>translate</type>
     <object-name>btn-up</object-name>
     <property>autopilot/kap140/event/button-up</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1639,9 +1693,11 @@
     <type>translate</type>
     <object-name>btn-down</object-name>
     <property>autopilot/kap140/event/button-down</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1649,9 +1705,11 @@
     <type>translate</type>
     <object-name>btn-arm</object-name>
     <property>autopilot/kap140/event/button-arm</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -1659,26 +1717,30 @@
     <type>translate</type>
     <object-name>btn-baro</object-name>
     <property>autopilot/kap140/event/button-baro</property>
-    <factor>1</factor>
+    <factor> 1 </factor>
     <axis>
-      <object-name>knob-axis</object-name>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
-  <!--effect>
+  <!--
+  <effect>
     <inherits-from>../Effects/c182s_interior_radiance</inherits-from>
     <object-name>knob-outer</object-name>
     <object-name>knob-inner</object-name>
     <object-name>base</object-name>
     <object-name>buttons</object-name>
-  </effect-->
+  </effect>
+  -->
 
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>glass</object-name>
     <object-name>base-sensor</object-name>
   </effect>
-  
+
   <animation>
     <type>select</type>
     <condition>
