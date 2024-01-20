@@ -61,8 +61,10 @@
   </heading-indicator>
 
   <turn-indicator>
-    <name>turn-indicator</name>
+    <name>turn-coordinator</name>
     <number>0</number>
+    <power-supply>/systems/electrical/outputs/turn-coordinator</power-supply>
+    <minimum-supply-volts>24</minimum-supply-volts>
   </turn-indicator>
 
   <marker-beacon>

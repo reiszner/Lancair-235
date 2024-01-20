@@ -21,6 +21,8 @@
       </livery>
     </model>
 
+    <instrumentation include="initialisation.xml"/>
+
     <systems include="rules.xml">
       <path>Aircraft/Lancair-235/Systems/systems.xml</path>
       <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-proprules.xml</path>
@@ -106,8 +108,6 @@
 
   <controls include="controls.xml"/>
 
-  <instrumentation include="initialisation.xml"/>
-
   <autopilot include="Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-properties.xml"/>
 
   <nasal>
@@ -121,23 +121,12 @@
       <file>Aircraft/Lancair-235/Nasal/convert.nas</file>
       <file>Aircraft/Lancair-235/Nasal/Electrical.nas</file>
     </lancair235>
-    <ki252a>
-      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kfc200/ki252a.nas</file>
-    </ki252a>
     <chronograph>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/chronograph/chronograph.nas</file>
     </chronograph>
     <kns80>
       <file>Aircraft/Lancair-235/Nasal/kns80.nas</file>
     </kns80>
-    <kcs55>
-      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kcs55/kcs55.nas</file>
-      <script>
-        <![CDATA[
-          KCS55.new();
-        ]]>
-      </script>
-    </kcs55>
     <kr87>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kr87-adf/kr87.nas</file>
     </kr87>
@@ -152,6 +141,17 @@
     <kap140>
       <file>Aircraft/Lancair-235/Nasal/kap140.nas</file>
     </kap140>
+    <ki252a>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kfc200/ki252a.nas</file>
+    </ki252a>
+    <kcs55>
+      <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kcs55/kcs55.nas</file>
+      <script>
+        <![CDATA[
+          KCS55.new();
+        ]]>
+      </script>
+    </kcs55>
     <zkv500>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/zkv500/ZKV500.nas</file>
     </zkv500>
