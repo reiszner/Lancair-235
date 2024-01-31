@@ -171,7 +171,7 @@ We have captured the localizer and the GS.
     <logic>
         <input>
             <and>
-                <!--property>instrumentation/turn-indicator/operable</property-->
+                <property>instrumentation/turn-indicator/operable</property>
                 <property>instrumentation/turn-indicator/serviceable</property>
             </and>
         </input>

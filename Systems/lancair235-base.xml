@@ -21,7 +21,6 @@
       </livery>
     </model>
 
-    <instrumentation include="initialisation.xml"/>
 
     <systems include="rules.xml">
       <path>Aircraft/Lancair-235/Systems/systems.xml</path>
@@ -108,6 +107,8 @@
 
   <controls include="controls.xml"/>
 
+  <instrumentation include="initialisation.xml"/>
+  
   <autopilot include="Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-properties.xml"/>
 
   <nasal>
@@ -141,9 +142,9 @@
     <kap140>
       <file>Aircraft/Lancair-235/Nasal/kap140.nas</file>
     </kap140>
-    <ki252a>
+    <!--ki252a>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kfc200/ki252a.nas</file>
-    </ki252a>
+    </ki252a-->
     <kcs55>
       <file>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kcs55/kcs55.nas</file>
       <script>
