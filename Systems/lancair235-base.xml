@@ -22,6 +22,8 @@
     </model>
 
 
+    <instrumentation include="initialisation.xml"/>
+
     <systems include="rules.xml">
       <path>Aircraft/Lancair-235/Systems/systems.xml</path>
       <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-proprules.xml</path>
@@ -31,6 +33,7 @@
       <path>Aircraft/Lancair-235/Systems/instrumentation.xml</path>
       <path>Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kns80/kns80-props.xml</path>
     </instrumentation>
+
 
     <multiplay>
       <chat_display>1</chat_display>
@@ -106,9 +109,9 @@
   <systems include="systems2.xml"/>
 
   <controls include="controls.xml"/>
-
-  <instrumentation include="initialisation.xml"/>
   
+  <instrumentation include="initialisation.xml"/>
+
   <autopilot include="Aircraft/Lancair-235/Models/Interior/Panel/Instruments/kap140/kap140-properties.xml"/>
 
   <nasal>
