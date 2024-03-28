@@ -50,11 +50,6 @@
     <id-code-disp                     type="int">0</id-code-disp>
   </transponder>
 
-  <nav-radio>
-    <name>nav</name>
-    <number>0</number>
-  </nav-radio>
-
   <nav                                n="0">
     <serviceable                      type="bool">true</serviceable>
     <power-btn                        type="bool">true</power-btn>
@@ -121,115 +116,6 @@
     <course-error type="double">0.0</course-error>
   </nav-source>
 
-  <kns80>
-    <powered                          type="bool">true</powered>
-    <serviceable                      type="bool">true</serviceable>
-    <nav-mode                         type="int">0</nav-mode>
-    <data-mode                        type="int">0</data-mode>
-    <dme-hold                         type="bool">false</dme-hold>
-    <use                              type="int">0</use>
-    <kns80_inner                      type="int">0</kns80_inner>
-    <kns80_outer                      type="int">0</kns80_outer>
-    <display                          type="int">0</display>
-    <display-timer                    type="double">0.0</display-timer>
-    <displayed-frequency              type="double">0.0</displayed-frequency>
-    <displayed-distance               type="double">0.0</displayed-distance>
-    <displayed-radial                 type="double">0.0</displayed-radial>
-    <used-frequency                   type="double">0.0</used-frequency>
-    <used-distance                    type="double">0.0</used-distance>
-    <used-radial                      type="double">0.0</used-radial>
-    <select-pulled                    type="bool">false</select-pulled>
-    <config>
-      <power-nominal                  type="double">12.0</power-nominal>
-    </config>
-    <nav>
-      <heading-deflection-deg         type="double">0.0</heading-deflection-deg>
-      <heading-deg                    type="double">0.0</heading-deg>
-      <heading-needle-deflection      type="double">0.0</heading-needle-deflection>
-      <heading-needle-deflection-nm   type="double">0.0</heading-needle-deflection-nm>
-      <heading-needle-deflection-norm type="double">0.0</heading-needle-deflection-norm>
-      <nav-distance-nm                type="double">0.0</nav-distance-nm>
-      <from-flag                      type="bool">true</from-flag>
-      <to-flag                        type="bool">true</to-flag>
-      <internal>
-        <aircraft-station-x           type="double"> 0.0 </aircraft-station-x>
-        <aircraft-station-y           type="double"> 0.0 </aircraft-station-y>
-        <aircraft-waypoint-x          type="double"> 0.0 </aircraft-waypoint-x>
-        <aircraft-waypoint-y          type="double"> 0.0 </aircraft-waypoint-y>
-        <station-declination          type="double"> 0.0 </station-declination>
-        <station-waypoint-x           type="double"> 0.0 </station-waypoint-x>
-        <station-waypoint-y           type="double"> 0.0 </station-waypoint-y>
-      </internal>
-    </nav>
-    <dme>
-      <indicated-distance-nm          type="double">0.0</indicated-distance-nm>
-      <indicated-ground-speed-kt      type="double">0.0</indicated-ground-speed-kt>
-      <indicated-time-min             type="double">0.0</indicated-time-min>
-      <internal>
-        <run n="0"                    type="bool">false</run>
-        <run n="1"                    type="bool">false</run>
-        <run n="2"                    type="bool">false</run>
-        <run n="3"                    type="bool">false</run>
-        <run n="4"                    type="bool">false</run>
-        <run n="5"                    type="bool">false</run>
-        <run n="6"                    type="bool">false</run>
-        <distance-old                 type="double"></distance-old>
-        <time                         type="double"></time>
-        <time-old                     type="double"></time-old>
-      </internal>
-    </dme>
-    <wpt                              n="0">
-      <freq1                          type="int">8</freq1>
-      <freq2                          type="int">0</freq2>
-      <frequency                      type="double">108.0</frequency>
-      <rad1                           type="int">0</rad1>
-      <rad2                           type="int">0</rad2>
-      <rad3                           type="int">0</rad3>
-      <radial                         type="double">0.0</radial>
-      <dist1                          type="int">0</dist1>
-      <dist2                          type="int">0</dist2>
-      <dist3                          type="int">0</dist3>
-      <distance                       type="double">0.0</distance>
-    </wpt>
-    <wpt                              n="1">
-      <freq1                          type="int">8</freq1>
-      <freq2                          type="int">0</freq2>
-      <frequency                      type="double">108.0</frequency>
-      <rad1                           type="int">0</rad1>
-      <rad2                           type="int">0</rad2>
-      <rad3                           type="int">0</rad3>
-      <radial                         type="double">0.0</radial>
-      <dist1                          type="int">0</dist1>
-      <dist2                          type="int">0</dist2>
-      <dist3                          type="int">0</dist3>
-      <distance                       type="double">0.0</distance>
-    </wpt>
-    <wpt                              n="2">
-      <freq1                          type="int">8</freq1>
-      <freq2                          type="int">0</freq2>
-      <frequency                      type="double">108.0</frequency>
-      <rad1                           type="int">0</rad1>
-      <rad2                           type="int">0</rad2>
-      <rad3                           type="int">0</rad3>
-      <radial                         type="double">0.0</radial>
-      <dist1                          type="int">0</dist1>
-      <dist2                          type="int">0</dist2>
-      <dist3                          type="int">0</dist3>
-      <distance                       type="double">0.0</distance>
-    </wpt>
-    <wpt                              n="3">
-      <freq1                          type="int">8</freq1>
-      <freq2                          type="int">0</freq2>
-      <frequency                      type="double">108.0</frequency>
-      <rad1                           type="int">0</rad1>
-      <rad2                           type="int">0</rad2>
-      <rad3                           type="int">0</rad3>
-      <radial                         type="double">0.0</radial>
-      <dist1                          type="int">0</dist1>
-      <dist2                          type="int">0</dist2>
-      <dist3                          type="int">0</dist3>
-      <distance                       type="double">0.0</distance>
-    </wpt>
-  </kns80>
+  <kns80 include="../Models/Interior/Panel/Instruments/kns80/kns80-props.xml">
 
 </PropertyList>
