@@ -116,6 +116,6 @@
     <course-error type="double">0.0</course-error>
   </nav-source>
 
-  <kns80 include="../Models/Interior/Panel/Instruments/kns80/kns80-props.xml">
+  <kns80 include="../Models/Interior/Panel/Instruments/kns80/kns80-props.xml"/>
 
 </PropertyList>
